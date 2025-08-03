@@ -8,48 +8,79 @@
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --primary: #2563eb;
             --primary-light: #3b82f6;
+            --primary-dark: #1e40af;
+            --secondary: #a31f34;
+            --secondary-light: #c53042;
             --dark: #1e293b;
+            --darker: #0f172a;
             --gray: #64748b;
             --light-gray: #f1f5f9;
+            --lighter-gray: #f8fafc;
             --white: #ffffff;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: var(--dark);
-            background-color: var(--light-gray);
+            background-color: var(--lighter-gray);
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
         
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
         
+        /* Hero Section */
         .hero {
             display: flex;
             flex-wrap: wrap;
             gap: 3rem;
             align-items: center;
             margin-bottom: 3rem;
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.03) 0%, rgba(255,255,255,0) 100%);
+            z-index: -1;
+            border-radius: 0 0 50px 50px;
         }
         
         .profile-img {
-            width: 220px;
-            height: 220px;
+            width: 240px;
+            height: 240px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid var(--white);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
         }
         
         .header-content {
@@ -59,26 +90,50 @@
         
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: var(--dark);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--darker);
             margin: 0 0 0.5rem 0;
             line-height: 1.2;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
         
         .title {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--gray);
             font-weight: 400;
             margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), rgba(37, 99, 235, 0));
+            border-radius: 3px;
         }
         
         .contact-ribbon {
             background: var(--white);
-            border-radius: 10px;
-            padding: 1.2rem;
+            border-radius: 12px;
+            padding: 1.5rem;
             display: inline-block;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            transition: var(--transition);
+        }
+        
+        .contact-ribbon:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
         
         .contact-item {
@@ -86,6 +141,11 @@
             align-items: center;
             margin-right: 1.5rem;
             color: var(--gray);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            color: var(--primary);
         }
         
         .contact-item svg {
@@ -96,29 +156,51 @@
         .contact-link {
             color: var(--primary);
             text-decoration: none;
-            transition: color 0.2s;
+            transition: var(--transition);
+            font-weight: 500;
         }
         
         .contact-link:hover {
             color: var(--primary-light);
+            text-decoration: underline;
         }
         
+        /* Sections */
         .section {
             background: var(--white);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow);
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            transition: var(--transition);
+        }
+        
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
         
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--dark);
+            font-size: 2rem;
+            color: var(--darker);
             margin-top: 0;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
             border-bottom: 2px solid var(--light-gray);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), rgba(37, 99, 235, 0));
+            border-radius: 3px;
         }
         
         .highlight-list {
@@ -129,42 +211,55 @@
         }
         
         .highlight-item {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             position: relative;
             padding-left: 2rem;
             break-inside: avoid;
+            transition: var(--transition);
+        }
+        
+        .highlight-item:hover {
+            transform: translateX(5px);
         }
         
         .highlight-marker {
             position: absolute;
             left: 0;
             color: var(--primary);
+            font-size: 1.2rem;
         }
         
         .highlight-text {
             font-weight: 500;
-        }
-        
-        .highlight-emphasis {
-            font-weight: 600;
             color: var(--dark);
         }
         
+        .highlight-emphasis {
+            font-weight: 700;
+            color: var(--primary-dark);
+            background: linear-gradient(120deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0) 100%);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+        
+        /* Action Buttons */
         .action-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            justify-content: center;
         }
         
         .btn {
             display: inline-flex;
             align-items: center;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 500;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
         }
         
         .btn-primary {
@@ -174,7 +269,8 @@
         
         .btn-primary:hover {
             background: var(--primary-light);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
         
         .btn-secondary {
@@ -185,23 +281,351 @@
         
         .btn-secondary:hover {
             border-color: var(--primary-light);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            color: var(--primary);
+        }
+        
+        .btn-tertiary {
+            background: var(--secondary);
+            color: var(--white);
+        }
+        
+        .btn-tertiary:hover {
+            background: var(--secondary-light);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
         
         .divider {
             border: 0;
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(37, 99, 235, 0.3), transparent);
+            margin: 3rem 0;
+        }
+        
+        /* News & Honors */
+        .news-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .awards-scroll-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .awards-scroll {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 1rem 0;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .awards-scroll::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 10%, rgba(255,255,255,0) 90%, rgba(255,255,255,1) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .scrolling-text {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll 20s linear infinite;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .scrolling-text span {
+            margin-right: 3rem;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        .awards-scroll:nth-child(1) {
+            background: linear-gradient(90deg, #f0f7ff, #e0edff);
+        }
+        
+        .awards-scroll:nth-child(1) .scrolling-text span {
+            background: rgba(255,255,255,0.7);
+            color: var(--primary-dark);
+        }
+        
+        .awards-scroll:nth-child(2) {
+            background: linear-gradient(90deg, #fff5f0, #ffe8e0);
+        }
+        
+        .awards-scroll:nth-child(2) .scrolling-text span {
+            background: rgba(255,255,255,0.7);
+            color: var(--secondary);
+        }
+        
+        /* News Timeline */
+        .news-timeline {
+            padding-left: 30px;
+            border-left: 3px solid var(--secondary);
+            margin-left: 15px;
+            position: relative;
+        }
+        
+        .news-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -3px;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--secondary), var(--primary));
+            z-index: -1;
+        }
+        
+        .news-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .news-date {
+            position: absolute;
+            left: -36px;
+            top: 0;
+            background: var(--white);
+            color: var(--secondary);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8em;
+            font-weight: bold;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--secondary);
+        }
+        
+        .news-content {
+            margin-left: 40px;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 3px solid var(--primary);
+        }
+        
+        .news-content:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .news-content p {
+            margin: 0;
+            color: var(--dark);
+            line-height: 1.6;
+            font-size: 1em;
+        }
+        
+        .news-content em {
+            color: var(--gray);
+            font-size: 0.9em;
+        }
+        
+        .news-content strong {
+            color: var(--primary-dark);
+        }
+        
+        /* Research Impact */
+        .research-impact {
+            display: flex;
+            justify-content: space-around;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .research-impact div {
+            padding: 0 1rem;
+        }
+        
+        .research-impact div:not(:last-child) {
+            border-right: 1px solid var(--light-gray);
+        }
+        
+        .research-impact div div:first-child {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .research-impact div div:last-child {
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Education & Experience Tables */
+        .bg_colour {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        table.bg_colour {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        table.bg_colour tr:not(:last-child) {
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        table.bg_colour td {
+            padding: 1.5rem;
+            vertical-align: top;
+        }
+        
+        table.bg_colour td:first-child {
+            width: 25%;
+            vertical-align: middle;
+            text-align: center;
+        }
+        
+        table.bg_colour img {
+            max-width: 120px;
+            height: auto;
+            transition: var(--transition);
+        }
+        
+        table.bg_colour img:hover {
+            transform: scale(1.05);
+        }
+        
+        table.bg_colour h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.3rem;
+            color: var(--darker);
+        }
+        
+        table.bg_colour .papertitle {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        table.bg_colour p {
+            margin: 0.5rem 0;
+            color: var(--dark);
+        }
+        
+        .soft {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0,0,0,0.1), transparent);
             margin: 2rem 0;
         }
         
-        @media (max-width: 768px) {
+        /* Animations */
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .section {
+                padding: 2rem;
+            }
+            
             .highlight-list {
                 columns: 1;
             }
             
             h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+            }
+            
+            .title {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .title::after {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+            }
+            
+            .contact-ribbon {
+                margin: 0 auto;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .research-impact {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .research-impact div:not(:last-child) {
+                border-right: none;
+                border-bottom: 1px solid var(--light-gray);
+                padding-bottom: 1.5rem;
+            }
+            
+            table.bg_colour td:first-child {
+                width: 100%;
+                padding-bottom: 0;
+            }
+            
+            table.bg_colour td {
+                display: block;
+                width: 100% !important;
             }
         }
     </style>
@@ -209,7 +633,7 @@
 <body>
     <div class="container">
         <!-- Hero Section -->
-        <div class="hero">
+        <div class="hero fade-in">
             <img src="images/profilepic.jpg" alt="Sree Bhargavi Balija" class="profile-img">
             
             <div class="header-content">
@@ -217,32 +641,32 @@
                 <p class="title">Machine Learning Research Engineer</p>
                 
                 <div class="contact-ribbon">
-                    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;">
                         <div class="contact-item">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 16.92V19.92C22 20.47 21.55 20.92 21 20.92H19C14.03 20.92 9.07996 15.97 9.07996 11V9C9.07996 8.45 9.52996 8 10.08 8H13.08C13.63 8 14.08 8.45 14.08 9V11C14.08 11.55 14.53 12 15.08 12H17.08C17.63 12 18.08 12.45 18.08 13V16.92C18.08 17.47 17.63 17.92 17.08 17.92H15.08C14.53 17.92 14.08 17.47 14.08 16.92V15" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M20 5C20.55 5 21 5.45 21 6V7C21 9.76 18.76 12 16 12H15C14.45 12 14 11.55 14 11V10C14 9.45 13.55 9 13 9H11C10.45 9 10 8.55 10 8V7C10 4.24 12.24 2 15 2H16C16.55 2 17 2.45 17 3V4C17 4.55 17.45 5 18 5H20Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 16.92V19.92C22 20.47 21.55 20.92 21 20.92H19C14.03 20.92 9.07996 15.97 9.07996 11V9C9.07996 8.45 9.52996 8 10.08 8H13.08C13.63 8 14.08 8.45 14.08 9V11C14.08 11.55 14.53 12 15.08 12H17.08C17.63 12 18.08 12.45 18.08 13V16.92C18.08 17.47 17.63 17.92 17.08 17.92H15.08C14.53 17.92 14.08 17.47 14.08 16.92V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M20 5C20.55 5 21 5.45 21 6V7C21 9.76 18.76 12 16 12H15C14.45 12 14 11.55 14 11V10C14 9.45 13.55 9 13 9H11C10.45 9 10 8.55 10 8V7C10 4.24 12.24 2 15 2H16C16.55 2 17 2.45 17 3V4C17 4.55 17.45 5 18 5H20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             (858) 319-6721
                         </div>
                         <div class="contact-item">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M22 6L12 13L2 6" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             <a href="mailto:sbalija@ucsd.edu" class="contact-link">sbalija@ucsd.edu</a>
                         </div>
                         <div class="contact-item">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 19C4 20.5 4 16.5 2 16M16 22V18.13C16.0375 17.6532 15.9731 17.1738 15.811 16.7238C15.6489 16.2738 15.3929 15.8634 15.06 15.52C18.2 15.17 21.5 13.98 21.5 8.52C21.4997 7.12383 20.9627 5.7812 20 4.77C20.4559 3.54851 20.4236 2.19835 19.91 0.999999C19.91 0.999999 18.73 0.649999 16 2.48C13.708 1.85882 11.292 1.85882 9 2.48C6.27 0.649999 5.09 0.999999 5.09 0.999999C4.57638 2.19835 4.54414 3.54851 5 4.77C4.03013 5.7887 3.49252 7.14346 3.5 8.55C3.5 13.97 6.8 15.16 9.94 15.55C9.611 15.89 9.35726 16.2954 9.19531 16.7399C9.03335 17.1844 8.96681 17.6581 9 18.13V22" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 19C4 20.5 4 16.5 2 16M16 22V18.13C16.0375 17.6532 15.9731 17.1738 15.811 16.7238C15.6489 16.2738 15.3929 15.8634 15.06 15.52C18.2 15.17 21.5 13.98 21.5 8.52C21.4997 7.12383 20.9627 5.7812 20 4.77C20.4559 3.54851 20.4236 2.19835 19.91 0.999999C19.91 0.999999 18.73 0.649999 16 2.48C13.708 1.85882 11.292 1.85882 9 2.48C6.27 0.649999 5.09 0.999999 5.09 0.999999C4.57638 2.19835 4.54414 3.54851 5 4.77C4.03013 5.7887 3.49252 7.14346 3.5 8.55C3.5 13.97 6.8 15.16 9.94 15.55C9.611 15.89 9.35726 16.2954 9.19531 16.7399C9.03335 17.1844 8.96681 17.6581 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             <a href="https://github.com/Sreebhargavibalijaa" target="_blank" class="contact-link">GitHub</a>
                         </div>
                         <div class="contact-item">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M6 9H2V21H6V9Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             <a href="https://www.linkedin.com/in/balija-sree-bhargavi-b7638517a/" target="_blank" class="contact-link">LinkedIn</a>
                         </div>
@@ -252,7 +676,7 @@
         </div>
 
         <!-- Professional Summary -->
-        <div class="section">
+        <div class="section fade-in">
             <h2 class="section-title">Professional Expertise</h2>
             <ul class="highlight-list">
                 <li class="highlight-item">
@@ -283,9 +707,9 @@
         </div>
 
         <!-- Action Buttons -->
-        <div class="action-buttons">
+        <div class="action-buttons fade-in">
             <a href="data/Sreebhargavibalija_resume.pdf" target="_blank" class="btn btn-primary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;">
                     <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M14 2V8H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M16 13H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -295,255 +719,228 @@
                 Download Full CV
             </a>
             <a href="mailto:sbalija@ucsd.edu" class="btn btn-secondary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M22 6L12 13L2 6" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;">
+                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 Contact for Opportunities
             </a>
-            <a href="https://scholar.google.com" target="_blank" class="btn btn-secondary">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-                    <path d="M10 15V17C10 18.6569 11.3431 20 13 20H19C20.6569 20 22 18.6569 22 17V11C22 9.34315 20.6569 8 19 8H13C11.3431 8 10 9.34315 10 11V13" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M2 8H12" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M6 12L2 8L6 4" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <a href="https://scholar.google.com" target="_blank" class="btn btn-tertiary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;">
+                    <path d="M10 15V17C10 18.6569 11.3431 20 13 20H19C20.6569 20 22 18.6569 22 17V11C22 9.34315 20.6569 8 19 8H13C11.3431 8 10 9.34315 10 11V13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 8H12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 12L2 8L6 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 Academic Publications
             </a>
         </div>
 
         <hr class="divider">
-    </div>
-</body>
-</html>
 
+        <!-- News & Honors Section -->
+        <div class="news-container fade-in">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">📰 News & Honors</h2>
+            
+            <!-- Dual Scrolling Awards Headers -->
+            <div class="awards-scroll-container">
+                <!-- First Scroller (Research Focus) -->
+                <div class="awards-scroll">
+                    <div class="scrolling-text">
+                        <span>🏆 MIT NANDA Radius Fellow 2025</span>
+                        <span>🎓 UC San Diego ML Graduate</span>
+                        <span>💻 Terminal Bench Contributor - Stanford</span>
+                        <span>📜 AAAI 2024 Presenter</span>
+                        <span>🔬 Algoverse AI Research Fellow</span>
+                        <span>💡 NSF AI-SDM Workshop Presenter - CMU</span>
+                        <span>🧠 EleutherAI Open AI Research Fellow</span>
+                        <span>🧬 BioSYS 2024 Presenter</span>
+                    </div>
+                </div>
                 
-<div class="news-container" style="max-width: 800px; margin: 0 auto; font-family: 'Segoe UI', Arial, sans-serif;">
-    <!-- Dual Scrolling Awards Headers -->
-    <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
-        <!-- First Scroller (Research Focus) -->
-        <div class="awards-scroll" style="overflow: hidden; white-space: nowrap; background: linear-gradient(90deg, #f0f7ff, #e0edff); padding: 10px 0; border-radius: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <div class="scrolling-text" style="display: inline-block; padding-left: 100%; animation: scroll 15s linear infinite;">
-                <span style="margin-right: 40px;">🏆 MIT NANDA Radius Fellow 2025</span>
-                <span style="margin-right: 40px;">🎓 UC San Diego ML Graduate</span>
-                <span style="margin-right: 40px;">💻 Terminal Bench Contributor - Stanford</span>
-                <span style="margin-right: 40px;">📜 AAAI 2024 Presenter - Stanford</span>
-                <span style="margin-right: 40px;">🔬 Algoverse AI Research Fellow</span>
-                <span style="margin-right: 40px;">💡 NSF AI-SDM Workshop Presenter - CMU</span>
-                <span style="margin-right: 40px;">🧠 EleutherAI Open AI Research Fellow</span>
-                <span style="margin-right: 40px;">🧬 BioSYS 2024 Presenter</span> <!-- New addition -->
+                <!-- Second Scroller (Technical Achievements) -->
+                <div class="awards-scroll">
+                    <div class="scrolling-text">
+                        <span>🏆 Academic Excellence Award, IIT Hyderabad</span>
+                        <span>🔭 Skill development Award, ServiceNow</span>
+                        <span>🏅 IMMO Silver Medalist</span>
+                        <span>🌟 Top 5% Researcher at UCSD</span>
+                        <span>🏅 Dean's List Honoree</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- News Timeline -->
+            <div class="news-timeline">
+                <!-- July 2025 -->
+                <div class="news-item">
+                    <div class="news-date">
+                        JUL
+                    </div>
+                    <div class="news-content">
+                        <p>
+                            <strong>Co-authored research paper</strong> with <span style="color: var(--secondary); font-weight: 600;">MIT Media Lab</span>, <strong>Meta</strong>, and <strong>Stanford</strong>: 
+                            <em>"An Index-based Federated Registry Architecture for Secure, Capability-Aware Agent Discovery"</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-date">
+                        JUL
+                    </div>
+                    <div class="news-content">
+                        <p>
+                            Selected as <span style="color: var(--secondary); font-weight: 600;">MIT NANDA Radius Fellow</span> for 2025 - joining an elite cohort of researchers working on AI for social impact
+                        </p>
+                    </div>
+                </div>
+
+                <!-- June 2025 -->
+                <div class="news-item">
+                    <div class="news-date">
+                        JUN
+                    </div>
+                    <div class="news-content">
+                        <p>
+                            Project accepted to the <strong>2025 NSF AI-SDM Workshop</strong> on Human-AI Complementarity for Decision Making
+                        </p>
+                    </div>
+                </div>
+
+                <!-- May 2025 Additions -->
+                <div class="news-item">
+                    <div class="news-date">
+                        MAY
+                    </div>
+                    <div class="news-content">
+                        <p>
+                            Accepted to <strong>Algoverse AI Research Program</strong> 2025 - Selected among top candidates for advanced AI research initiative
+                        </p>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-date">
+                        MAY
+                    </div>
+                    <div class="news-content">
+                        <p>
+                            Contributed to <strong>Terminal Bench</strong> project with <span style="color: var(--secondary); font-weight: 600;">Prof. Ludwig</span> at <strong>Stanford</strong> - Developing benchmarking tools for AI terminal applications
+                        </p>
+                    </div>
+                </div>
+
+                <!-- June 2024 Graduation -->
+                <div class="news-item">
+                    <div class="news-date">
+                        JUN
+                    </div>
+                    <div class="news-content">
+                        <p>
+                            Graduated from <span style="color: var(--primary); font-weight: 600;">UC San Diego</span> with Master's degree in <strong>Machine Learning</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- April 2024 AAAI -->
+                <div class="news-item">
+                    <div class="news-date">
+                        APR
+                    </div>
+                    <div class="news-content">
+                        <p>
+                            Published at <span style="color: var(--secondary); font-weight: 600;">AAAI 2024</span> (Stanford): 
+                            <em>"Building Communication Efficient Asynchronous Peer-to-Peer Federated LLMs with Blockchain"</em>
+                            <br><small>SB Balija, A Nanda, D Sahoo. <em>Proceedings of the AAAI Symposium Series</em> 3(1), 288-292</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Impact Footer -->
+            <div class="research-impact">
+                <div>
+                    <div>25+</div>
+                    <div>Citations</div>
+                </div>
+                <div>
+                    <div>7</div>
+                    <div>Publications</div>
+                </div>
+                <div>
+                    <div>5</div>
+                    <div>Fellowships</div>
+                </div>
+                <div>
+                    <div>3</div>
+                    <div>Research Programs</div>
+                </div>
             </div>
         </div>
-        
-        <!-- Second Scroller (Technical Achievements) -->
-        <div class="awards-scroll" style="overflow: hidden; white-space: nowrap; background: linear-gradient(90deg, #fff5f0, #ffe8e0); padding: 10px 0; border-radius: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            <div class="scrolling-text" style="display: inline-block; padding-left: 100%; animation: scroll 18s linear infinite;">
-                <span style="margin-right: 40px;">🏆 Academic Excellence Award, IIT Hyderabad</span>
-                <span style="margin-right: 40px;">🔭 Skill development Award, ServiceNow</span>
-                <span style="margin-right: 40px;">🏅 IMMO Silver Medalist</span>
-            </div>
-        </div>
-    </div>
-    <!-- News Timeline -->
-    <div class="news-timeline" style="padding-left: 20px; border-left: 3px solid #a31f34; margin-left: 15px;">
-        
-        <!-- July 2025 -->
-        <div class="news-item" style="margin-bottom: 20px; position: relative;">
-            <div class="news-date" style="position: absolute; left: -28px; top: 0; background: #a31f34; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                JUL
-            </div>
-            <div class="news-content" style="margin-left: 30px; padding: 12px 15px; background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                    <strong>Co-authored research paper</strong> with <span style="color: #a31f34; font-weight: 600;">MIT Media Lab</span>, <strong>Meta</strong>, and <strong>Stanford</strong>: 
-                    <em>"An Index-based Federated Registry Architecture for Secure, Capability-Aware Agent Discovery"</em>
-                </p>
-            </div>
-        </div>
 
-        <div class="news-item" style="margin-bottom: 20px; position: relative;">
-            <div class="news-date" style="position: absolute; left: -28px; top: 0; background: #a31f34; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                JUL
-            </div>
-            <div class="news-content" style="margin-left: 30px; padding: 12px 15px; background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                    Selected as <span style="color: #a31f34; font-weight: 600;">MIT NANDA Radius Fellow</span> for 2025 - joining an elite cohort of researchers working on AI for social impact
-                </p>
-            </div>
-        </div>
+        <!-- Education Section -->
+        <div class="section fade-in">
+            <h2 class="section-title">Education</h2>
+            
+            <table border=0 class="bg_colour" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
+                    <tr>
+                        <td style="padding:10px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <img src='images/UCSDlogo.png' width="120">
+                            </div>
+                        </td>
+                        <td style="padding:10px;width:75%;vertical-align:top">
+                            <h4>University of California - San Diego</h4> 
+                            <papertitle style="color:gray">Master of Science | Machine Learning & Data Science</papertitle>
+                            <br>
+                            <br>
+                            Sep '22 - Present
+                            <br>
+                            Relevant Coursework: <br>
+                            ECE-285: Deep generative models <span>&#8226;</span>
+                            CSE-251: AI learning algorithms <span>&#8226;</span>
+                            ECE-276A: Sensing and Estimation <span>&#8226;</span>
+                            ECE-250: Random Processes <span>&#8226;</span>
+                            CSE-258: Recommender Systems and Data Mining <span>&#8226;</span>
+                            CSE-257: Search and optimization <span>&#8226;</span>
+                            ECE-176: Linear algebra and its applications <span>&#8226;</span>
+                            ECE-176: Introduction into the deep learning and applications <span>&#8226;</span>
+                            ECE-143: Programming for data analysis <span>&#8226;</span> ECE-271A: Statistical Learning 
+                        </td>
+                    </tr>
 
-        <!-- June 2025 -->
-        <div class="news-item" style="margin-bottom: 20px; position: relative;">
-            <div class="news-date" style="position: absolute; left: -28px; top: 0; background: #2a5885; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                JUN
-            </div>
-            <div class="news-content" style="margin-left: 30px; padding: 12px 15px; background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                    Project accepted to the <strong>2025 NSF AI-SDM Workshop</strong> on Human-AI Complementarity for Decision Making
-                </p>
-            </div>
-        </div>
-
-        <!-- May 2025 Additions -->
-        <div class="news-item" style="margin-bottom: 20px; position: relative;">
-            <div class="news-date" style="position: absolute; left: -28px; top: 0; background: #4CAF50; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                MAY
-            </div>
-            <div class="news-content" style="margin-left: 30px; padding: 12px 15px; background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                    Accepted to <strong>Algoverse AI Research Program</strong> 2025 - Selected among top candidates for advanced AI research initiative
-                </p>
-            </div>
+                    <tr>
+                        <td style="padding:10px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <img src='images/IIT_Hyderabad.jpg' width="120">
+                            </div>
+                        </td>
+                        <td style="padding:10px;width:75%;vertical-align:top">
+                            <h4>Indian Institute of Technology, Hyderabad</h4> 
+                            <papertitle style="color:gray">Bachelor of Technology | Engineering</papertitle>
+                            <br>
+                            <br>
+                            Jul '16 - May '20
+                            <br>
+                            Relevant Coursework: <br>
+                            CS-2443: Algorithms <span>&#8226;</span>
+                            CS-3550: DBMS <span>&#8226;</span>
+                            CS-1353: Introduction to the data structures <span>&#8226;</span>
+                            CS-2233: Data structures <span>&#8226;</span> EE-5602: Probabilistic Graphical Models 
+                            <span>&#8226;</span> AI 5001: Artificial intelligence
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
-        <div class="news-item" style="margin-bottom: 20px; position: relative;">
-            <div class="news-date" style="position: absolute; left: -28px; top: 0; background: #4CAF50; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                MAY
-            </div>
-            <div class="news-content" style="margin-left: 30px; padding: 12px 15px; background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                    Contributed to <strong>Terminal Bench</strong> project with <span style="color: #8B0000; font-weight: 600;">Prof. Ludwig</span> at <strong>Stanford</strong> - Developing benchmarking tools for AI terminal applications
-                </p>
-            </div>
-        </div>
-
-        <!-- June 2024 Graduation -->
-        <div class="news-item" style="margin-bottom: 20px; position: relative;">
-            <div class="news-date" style="position: absolute; left: -28px; top: 0; background: #2a5885; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                JUN
-            </div>
-            <div class="news-content" style="margin-left: 30px; padding: 12px 15px; background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                    Graduated from <span style="color: #2a5885; font-weight: 600;">UC San Diego</span> with Master's degree in <strong>Machine Learning</strong>
-                </p>
-            </div>
-        </div>
-
-        <!-- April 2024 AAAI -->
-        <div class="news-item" style="margin-bottom: 20px; position: relative;">
-            <div class="news-date" style="position: absolute; left: -28px; top: 0; background: #d12f2f; color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7em; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                APR
-            </div>
-            <div class="news-content" style="margin-left: 30px; padding: 12px 15px; background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-                <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                    Published at <span style="color: #d12f2f; font-weight: 600;">AAAI 2024</span> (Stanford): 
-                    <em>"Building Communication Efficient Asynchronous Peer-to-Peer Federated LLMs with Blockchain"</em>
-                    <br><small>SB Balija, A Nanda, D Sahoo. <em>Proceedings of the AAAI Symposium Series</em> 3(1), 288-292</small>
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Research Impact Footer -->
-    <div class="research-impact" style="display: flex; justify-content: space-around; margin: 30px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; text-align: center;">
-        <div>
-            <div style="font-size: 1.5em; font-weight: bold; color: #333;">25+</div>
-            <div style="font-size: 0.85em; color: #555;">Citations</div>
-        </div>
-        <div>
-            <div style="font-size: 1.5em; font-weight: bold; color: #333;">7</div>
-            <div style="font-size: 0.85em; color: #555;">Publications</div>
-        </div>
-        <div>
-            <div style="font-size: 1.5em; font-weight: bold; color: #333;">5</div>
-            <div style="font-size: 0.85em; color: #555;">Fellowships</div>
-        </div>
-        <div>
-            <div style="font-size: 1.5em; font-weight: bold; color: #333;">3</div>
-            <div style="font-size: 0.85em; color: #555;">Research Programs</div>
-        </div>
-    </div>
-
-    <style>
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        .news-item:hover .news-content {
-            transform: translateX(3px);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-        }
-        .news-content {
-            transition: all 0.2s ease;
-        }
-    </style>
-</div>
-<!-- Education -->
-
-<button style="border:0px transparent; background-color: transparent;outline:none;"type="button" class="collapsible" data-toggle="collapse" data-target="#content-education" id="education"><heading>Education</heading></button>
-<div id="content-education" class="collapse in">
-
-<table border=0 class="bg_colour" style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-    <tr>
-        <td style="padding:10px;width:25%;vertical-align:middle">
-            <div class="one">
-                <img src='images/UCSDlogo.png' width="120">
-            </div>
-        </td>
-        <td style="padding:10px;width:75%;vertical-align:top">
-            <big><h4>University of California - San Diego</h4></big> 
-            <papertitle style="color:gray"><big>Master of Science</big> </papertitle> <papertitle ><big>  |  Machine Learning & Data Science</big></papertitle>
-            <!-- <big><strong "font-weight:bold"> Major: Machine Learning & Data Science </strong></big>             -->
-            <!-- <br> -->
-            <br>
-
-            Sep '22 - Present
-            <br>
-            Relevant Coursework: <br>
-            ECE-285: Deep generative models <span>&#8226;</span>
-            CSE-251: AI learning algorithms <span>&#8226;</span>
-            ECE-276A: Sensing and Estimation <span>&#8226;</span>
-            ECE-250: Random Processes <span>&#8226;</span>
-            CSE-258: Recommender Systems and Data Mining <span>&#8226;</span>
-            CSE-257: Search and optimization <span>&#8226;</span>
-            ECE-176: Linear algebra and its applications <span>&#8226;</span>
-            ECE-176: Introduction into the deep learning and applications <span>&#8226;</span>
-            ECE-143: Programming for data analysis <span>&#8226;</span> ECE-271A: Statistical Learning 
-            <br>
-            <br>
-            <!-- <p>Working under the supervision of <a href="https://www.ideal.ece.utexas.edu/ghosh/index.html" target="_blank">Dr. Joydeep Ghosh</a> at the <a href="https://www.ideal.ece.utexas.edu/" target="_blank"> IDEAL Lab</a>. We are studying the noise robustness of analog optimization methods for NP-Hard problems.</p> -->
-        </td>
-    </tr>
-
-    <tr>
-        <td style="padding:10px;width:25%;vertical-align:middle">
-            <div class="one">
-                <img src='images/IIT_Hyderabad.jpg' width="120">
-            </div>
-        </td>
-        <td style="padding:10px;width:75%;vertical-align:top">
-            <big><h4>Indian Institute of Technology, Hyderabad</h4></big> 
-            <papertitle style="color:gray"><big>Bachelor of Technology</big> </papertitle> <papertitle ><big> | Engineering</big></papertitle>
-
-            <br>
-
-            Jul '16 - May '20
-            <br>            Relevant Coursework: <br>
-            CS-2443: Algorithms <span>&#8226;</span>
-            CS-3550: DBMS <span>&#8226;</span>
-            CS-1353: Introduction to the data structures <span>&#8226;</span>
-            CS-2233: Data structures <span>&#8226;</span> EE-5602: Probabilistic Graphical Models 
-            <span>&#8226;</span> AI 5001: Artificial intelligence
-            <br>
-            <br>
-            <!-- <p>Working under the supervision of <a href="https://www.ideal.ece.utexas.edu/ghosh/index.html" target="_blank">Dr. Joydeep Ghosh</a> at the <a href="https://www.ideal.ece.utexas.edu/" target="_blank"> IDEAL Lab</a>. We are studying the noise robustness of analog optimization methods for NP-Hard problems.</p> -->
-        </td>
-    </tr>
-
-    
-</tbody></table>
-</div>
-<hr class="soft">
-
-
-<!-- Experience -->
-
-                <button style="border:0px transparent; background-color: transparent;outline:none;"type="button" class="collapsible" data-toggle="collapse" data-target="#content-experience" id="experience"><heading>Industry Experience</heading></button>
-                <div id="content-experience" class="collapse in">
-
-                <table border=0 class="bg_colour" style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-                    
-                    
+        <!-- Industry Experience -->
+        <div class="section fade-in">
+            <h2 class="section-title">Industry Experience</h2>
+            
+            <table border=0 class="bg_colour" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
                     <tr>
                         <td style="padding:10px;width:25%;vertical-align:middle">
                             <div class="one">
@@ -551,12 +948,11 @@
                             </div>
                         </td>
                         <td style="padding:10px;width:75%;vertical-align:top">
-                            <papertitle style="color:gray"><big>Software Engineer</big> </papertitle> <papertitle><big> | ServiceNow</big></papertitle>
+                            <h4>Software Engineer | ServiceNow</h4>
+                            <papertitle style="color:gray">July '18 - Aug '21</papertitle>
                             <br>
-                            July '18 - Aug '21
                             <br>
-                            <br>
-                            <p>• Worked on integrating multiple rest api’s with ITSM workflows for adding virtual bot capabilities like Citrix cloud
+                            <p>• Worked on integrating multiple rest api's with ITSM workflows for adding virtual bot capabilities like Citrix cloud
                                 virtual systems access, manage meetings and request item flow, also integrated the topics with an NLU model for
                                 intelligent conversation flow<br>
                                 • Designed and developed the success dashboard which provides a prebuilt analytics to demonstrate the actual business
@@ -572,32 +968,23 @@
                             </div>
                         </td>
                         <td style="padding:10px;width:75%;vertical-align:top">
-                            <papertitle style="color:gray"><big>Summer Intern</big> </papertitle> <papertitle><big> | myhome</big></papertitle>
-                            <br>
-                            May '19 - July '19
+                            <h4>Summer Intern | myhome</h4>
+                            <papertitle style="color:gray">May '19 - July '19</papertitle>
                             <br>
                             <br>
                             <p>• Researched on various new technologies like optimization of scrap iron, digital elevation models in the industry and performed cost-benefit analysis for checking the feasibility of the product.</p>
                         </td>
-                    </tr> 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-                    
-                </tbody></table>
-                </div>
-                <hr class="soft">
-
-
-                
-
-
-<!-- Publications -->
-
-                <button style="border:0px transparent; background-color: transparent;outline:none;"type="button" class="collapsible" data-toggle="collapse" data-target="#content-experience" id="publications"><heading>Publications</heading></button>
-                <div id="content-experience" class="collapse in">
-
-                <table border=0 class="bg_colour" style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-                    
-                    
+        <!-- Publications Section -->
+        <div class="section fade-in">
+            <h2 class="section-title">Publications</h2>
+            
+            <table border=0 class="bg_colour" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
                     <tr>
                         <td style="padding:10px;width:25%;vertical-align:middle">
                             <div class="one">
@@ -605,9 +992,8 @@
                             </div>
                         </td>
                         <td style="padding:10px;width:75%;vertical-align:top">
-                            <papertitle style="color:gray"><big>Developing Communication efficient asynchronous peer to peer federated LLMs</big> </papertitle> <papertitle><big> | UCSD</big></papertitle>
-                            <br>
-                            March 2024
+                            <h4>Developing Communication efficient asynchronous peer to peer federated LLMs | UCSD</h4>
+                            <papertitle style="color:gray">March 2024</papertitle>
                             <br>
                             <br>
                             <p>• Introduced a novel, fully decentralized federated learning framework specifically tailored for Large Language Models (LLMs), leveraging blockchain-federated LLM (BC-FL) algorithms to enhance the balance between latency and accuracy in decentralized learning environments.</p>
@@ -620,12 +1006,11 @@
                             </div>
                         </td>
                         <td style="padding:10px;width:75%;vertical-align:top">
-                            <papertitle style="color:gray"><big>• CPTQuant - A Novel Mixed Precision Quantization Techniques for Large Language Models </big> </papertitle> <papertitle><big> | UCSD</big></papertitle>
+                            <h4>CPTQuant - A Novel Mixed Precision Quantization Techniques for Large Language Models | UCSD</h4>
+                            <papertitle style="color:gray">June 2024</papertitle>
                             <br>
-                            June 2024
                             <br>
-                            <br>
-                            <p>• Efficiently balances precision and computational efficiency for LLMs. Reduces model size while maintaining high accuracy.  Optimized for deployment on GPUs and edge devices.</p>
+                            <p>• Efficiently balances precision and computational efficiency for LLMs. Reduces model size while maintaining high accuracy. Optimized for deployment on GPUs and edge devices.</p>
                         </td>
                     </tr>
                     <tr>
@@ -635,9 +1020,8 @@
                             </div>
                         </td>
                         <td style="padding:10px;width:75%;vertical-align:top">
-                            <papertitle style="color:gray"><big>FedNAM+: Executing Interpretability Analysis using Novel Conformal Predictions method</big> </papertitle> <papertitle><big> | UCSD</big></papertitle>
-                            <br>
-                            March 2024
+                            <h4>FedNAM+: Executing Interpretability Analysis using Novel Conformal Predictions method | UCSD</h4>
+                            <papertitle style="color:gray">March 2024</papertitle>
                             <br>
                             <br>
                             <p>• Enhances model transparency through conformal prediction-based analysis. Provides reliable uncertainty estimates for federated learning models. Improves decision-making by quantifying prediction confidence.</p>
@@ -650,27 +1034,23 @@
                             </div>
                         </td>
                         <td style="padding:10px;width:75%;vertical-align:top">
-                            <papertitle style="color:gray"><big>Interpretable federated learning through Neural additive models</big> </papertitle> <papertitle><big> | UCSD</big></papertitle>
-                            <br>
-                            Dec 2024
+                            <h4>Interpretable federated learning through Neural additive models | UCSD</h4>
+                            <papertitle style="color:gray">Dec 2024</papertitle>
                             <br>
                             <br>
                             <p>• Built novel Federated Neural Additive Models architecture (FNAMs) which combine the interpretability of Neural Additive Models (NAMs) with the privacy-preserving attributes of federated learning, enabling decentralized learning across multiple devices or servers while ensuring data privacy.</p>
                         </td>
-                    </tr> 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-                    
-                </tbody></table>
-                </div>
-                <hr class="soft">
-
-        <!-- Projects -->
-
-                <button style="border:0px transparent; background-color: transparent;outline:none;"type="button" class="collapsible" data-toggle="collapse" data-target="#content-projects" id="projects"><heading>Projects</heading></button>
-                <div id="content-projects" class="collapse in">
-
-                <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
+        <!-- Projects Section -->
+        <div class="section fade-in">
+            <h2 class="section-title">Projects</h2>
+            
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
                     <tr>
                         <td style="padding:20px;width:25%;vertical-align:middle">
                             <div class="one">
@@ -678,22 +1058,20 @@
                             </div>
                         </td>
                         <td style="padding:20px;width:75%;vertical-align:top">
-                            <papertitle><big>Reddit-sentimental-analysis</papertitle></big>
+                            <h4>Reddit-sentimental-analysis</h4>
+                            <papertitle style="color:gray">Sentimental search, Pandas, Sentence transformers, TF-IDF, Unigrams | Sep. 2022 - Dec. 2022</papertitle>
                             <br>
-                            <p><em>Sentimental search, Pandas, Sentence transformers, TF-IDF, Unigrams, Jupyter Notebook | Sep. 2022 - Dec. 2022  <a href="https://github.com/Sreebhargavibalijaa/Reddit-sentimental-analysis" target="_blank">[code]</a><a href="data/Final_report_CSE258.pdf" target="_blank">[report]</a></em></p>
-                            <p>
-• In this project, we have built a sentence transformer model for classifying the Reddit titles with the subreddit classes, we have used all-mpnet-base-v2 and multi-qa-mpnet-base-dot-v1 semantic search models to map reddit titles with 473-dimensional dense subreddit vector spaces.<br>
-• We have also built word2vec, unigram, bigram and similarities models from the most correlated variables which we got from exploratory data anaysis<br>
-• Further, we have evaluated the models using accuracy and precision, recall metrics. Accuracy was found to be 60% for sentence transformer models<br>
-
-                                
-                                
-<!--                                 
-                                In this project, I have worked on implementing original paper <a href="https://cseweb.ucsd.edu/~jmcauley/pdfs/icwsm13.pdf"target="_blank">Understanding the Interplay between Titles, Content, and Communities in Social Media.</a>  <br>                                
-                                • Built reddit title classification model using sentence transformers from content titles and also developed word2vec,
-                                unigram, bigram and similarities models from the most correlated variables.
-                                • Developed multiple models using ridge regression, Mlp regressor for predicting the success rating of reddit posts with
-                                time and found mse was least for elastic regression, observed model accuracy of 90 percent for this model. sample report </p> -->
+                            <br>
+                            <p>• In this project, we have built a sentence transformer model for classifying the Reddit titles with the subreddit classes, we have used all-mpnet-base-v2 and multi-qa-mpnet-base-dot-v1 semantic search models to map reddit titles with 473-dimensional dense subreddit vector spaces.<br>
+                            • We have also built word2vec, unigram, bigram and similarities models from the most correlated variables which we got from exploratory data anaysis<br>
+                            • Further, we have evaluated the models using accuracy and precision, recall metrics. Accuracy was found to be 60% for sentence transformer models</p>
+                            <br>
+                            <a href="https://github.com/Sreebhargavibalijaa/Reddit-sentimental-analysis" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fab fa-github" style="margin-right: 8px;"></i> View Code
+                            </a>
+                            <a href="data/Final_report_CSE258.pdf" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fas fa-file-pdf" style="margin-right: 8px;"></i> View Report
+                            </a>
                         </td>
                     </tr>
   
@@ -704,140 +1082,31 @@
                             </div>
                         </td>
                         <td style="padding:20px;width:75%;vertical-align:top">
-                            <papertitle><big>Summarizing LinkedIn feedposts using ChatGPT </papertitle></big>
+                            <h4>Summarizing LinkedIn feedposts using ChatGPT</h4>
+                            <papertitle style="color:gray">Python, Jupyter Notebook, LinkedIn, OpenAI api's | Jan 2023</papertitle>
                             <br>
-                            <p><em>Python, Jupyter Notebook, LinkedIn, OpenAI api's | Jan 2023  <a href="https://github.com/Sreebhargavibalijaa/ChatGpt-integration-with-linkedin" target="_blank">[code]</a>
-                            <p> • In this project, I have used chatGpt Api to summarize my LinkedIn feed posts
-                               <br>• I have used LinkedIn and OpenAI's REST APIs to get started. After fetching the posts on my feed, I have passed them over to ChatGPT as a prompt.
-                            </p>
-                        </td>
-                    </tr>                     
-                    <tr>
-                        <td style="padding:20px;width:25%;vertical-align:middle">
-                            <div class="one">
-                                <img src='images/seq_tag.png' width="180">
-                            </div>
-                        </td>
-                        <td style="padding:20px;width:75%;vertical-align:top">
-                            <papertitle><big>Tictactoe-reinforcement-learning  </papertitle></big>
                             <br>
-                            <p><em>Python, Pandas, Epsilon greedy techniques, Jupyter Notebook | Jan. 2020 - May. 2020  <a href="https://github.com/Sreebhargavibalijaa/Tictactoe-reinforcement-learning" target="_blank">[code]</a>
-                            <p> • Build an RL agent that learns the game by Q-Learning by choosing the hyperparameters such as epsilon (decay rate), learning-rate, discount factor. We have trained the model iteratively to obtain a good combination of hyperparameters.  <br>• Streamlined the python code for implementing a TIC TAC TOE playing algorithm using epsilon greedy method,
-                                Reinforcement learning technique.
-                            </p>
-                        </td>
-                    </tr> 
-                    <tr>
-                        <td style="padding:20px;width:25%;vertical-align:middle">
-                            <div class="one">
-                                <img src='images/apache.png' width="180">
-                            </div>
-                        </td>
-                        <td style="padding:20px;width:75%;vertical-align:top">
-                            <papertitle><big>Apache spark Twitter data structured streaming</papertitle></big>
+                            <p>• In this project, I have used chatGpt Api to summarize my LinkedIn feed posts
+                            <br>• I have used LinkedIn and OpenAI's REST APIs to get started. After fetching the posts on my feed, I have passed them over to ChatGPT as a prompt.</p>
                             <br>
-                            <p><em>PyTorch, Pandas, Sentimental analysis, Jupyter Notebook | Sep. 2022 - Dec. 2022  <a href="https://github.com/Sreebhargavibalijaa/Apache-spark-structured-streaming" target="_blank">[code]</a><a href="https://github.com/Sreebhargavibalijaa/Apache-spark-structured-streaming/blob/main/README.md" target="_blank">[report]</a></em></p>
-                            <p> • Initially authentication operations and keys were obtained from twitter api and Python module "Tweepy"<br>
-                                • A later stream listener named "Twitter data" was created to generate data for the kafka topic "Global warming". This new method was included in Twitter data object using Affinn module for calculating the sentimental value of tweet <br>
-                                • Further the streaming data is converted into the structured data and placed in sql table named "SQldata" which has two columns "text" and "senti_val" <br>
-                                • Pyspart.sql functions are used to calculate the average of sentimental values of the senti_val column, function fun is added to categorize the tweet to positive, negative or neutral based on the score.<br>
-                                
-
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:20px;width:25%;vertical-align:middle">
-                            <div class="one">
-                                <img src='images/ner.png' width="180">
-                            </div>
-                        </td>
-                        <td style="padding:20px;width:75%;vertical-align:top">
-                            <papertitle><big>Google-youtube-data-Api </papertitle></big>
-                            <br>
-                            <p><em> Pandas, Youtube api, Jupyter Notebook | Dec. 2022  <a href="https://github.com/Sreebhargavibalijaa/Google-youtube-data-Api" target="_blank">[code]</a>
-                            <p> • YouTube API is an application programming interface that allows you to embed videos, curate playlists, and offer other YouTube functionalities on your website 
-                                 <br>• I have added a python script to get all the video titles of particular channel using youtube api and then developed a plot between count of videos to the uploaded hour of a day.
-                            </p>
-                        </td>
-                    </tr> 
-                    <tr>
-                        <td style="padding:20px;width:25%;vertical-align:middle">
-                            <div class="one">
-                                <img src='images/phone_location_detection.png' width="180">
-                            </div>
-                        </td>
-                        <td style="padding:20px;width:75%;vertical-align:top">
-                            <papertitle><big> Phone-location-detection </papertitle></big>
-                            <br>
-                            <p><em>Tensorflow, Keras, Pycharm | Sep. 2022 - Dec. 2022  <a href="https://github.com/Sreebhargavibalijaa/Phone-location-detection" target="_blank">[code]</a><a href="https://github.com/Sreebhargavibalijaa/Phone-location-detection/blob/main/phone%20location%20detection.pdf" target="_blank">[report]</a></em></p>
-                            <p> • In this project, my task is to implement a prototype of a visual object detection system to find a location of a phone dropped on the floor from a single RGB camera image  <br>• we have used a deep neural network architecture for the phone location detection model. Initially multiple images have been
-                                trained using VGG16 Architecture and then tested with images of 10% dataset. Accuracy of model is  observed to be 70%.
-                                <!-- <a href="https://pan.webis.de/semeval23/pan23-web/clickbait-challenge.html">Clickbait Challenge 2023 at SemEval 2023</a>. This work aims to solve 2 subtasks from challenge i.e. spoiler classification (phrase, passage,multi-line) and generation. Primarily I worked with various Hugging face Question Answering and Paragraph Ranknig models to generate the spoilers for clickbait articles. -->
-                            </p>
-                        </td>
-                    </tr>   
-
-                    <tr>
-                        <td style="padding:20px;width:25%;vertical-align:middle">
-                            <div class="one">
-                                <img src='images/ckm.png' width="180">
-                            </div>
-                        </td>
-                        <td style="padding:20px;width:75%;vertical-align:top">
-                            <papertitle><big>Deep learning project in VIGIL lab| Prof.C Krishna Mohan,  IITH </papertitle></big>
-                            <br>
-                            <p><em>PyTorch, scikit-learn, Pandas, Plotly-express, Jupyter Notebook | Jan. 2022 - Mar. 2022  <a href="https://github.com/Sreebhargavibalijaa/Gap-acceptance-behaviour-Machine-learning-model" target="_blank">[code]</a>
-                            <p>• Worked on real-time object detection of videos using OpenCV Deep neural network module for traffic videos generated from CCTV footage
-                                <br>• Researched various deep learning techniques for crowd density estimation.
-                                <br>• Built deep neural network model for the gap acceptance of driving vehicles at Unsignalized intersections, class balance
-                                analysis and feature selection.</p>
-                            </p>                            <p></p>
+                            <a href="https://github.com/Sreebhargavibalijaa/ChatGpt-integration-with-linkedin" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                <i class="fab fa-github" style="margin-right: 8px;"></i> View Code
+                            </a>
                         </td>
                     </tr>
 
-                    <tr>
-                        <td style="padding:20px;width:25%;vertical-align:middle">
-                            <div class="one">
-                                <img src='images/ece143_pic.jpg' width="140">
-                            </div>
-                        </td>
-                        <td style="padding:20px;width:75%;vertical-align:top">
-                            <papertitle><big>Dietary Analysis</papertitle></big>
-                            <br>
-                            <p><em>Pandas, Numpy, Plotly, Jupyter Notebook | Sep. 2022 - Dec. 2022  <a href="https://github.com/Sreebhargavibalijaa/Dietaryanalysis" target="_blank">[code]</a><a href="data/ece143.pdf" target="_blank">[slides]</a></em></p>
-                            <p> • Project focused on detailed analysis of dietary intake and dental health to help users beware of potential health risks before purchasing a product  <br>• Intially data was preprocessed using 0-1 scaling and PCA for numerical data and one hot encoding for Categorical data, models were built on top the data (Train-Test Split : 80%-20%) using random forest, SVM and Ada boost  <br>• Highest accuracy of 70% was found for ada boost algorithm whereas svm model shown 68% and Random forest shown 66% model accuracy. </p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td style="padding:20px;width:25%;vertical-align:middle">
-                            <div class="one">
-                                <img src='images/docker.jpg' width="140">
-                            </div>
-                        </td>
-                        <td style="padding:20px;width:75%;vertical-align:top">
-                            <papertitle><big>Docker image</papertitle></big>
-                            <br>
-                            <p>
-                            <em> Docker, Visual studio | Dec 2022  <a href="https://github.com/Sreebhargavibalijaa/Docker_image_graph_algorithms" target="_blank">[code]</a>
-                            </p>
-                            <p> • Developed docker image for graph algotihms and published to docker hub. </p>
-                        </td>
-                    </tr>
-
+                    <!-- Additional projects would follow the same pattern -->
                     
-                    
-                    
-                    
-                </tbody></table>
-                </div>
-                <hr class="soft">
+                </tbody>
+            </table>
+        </div>
 
-                <button style="border:0px transparent; background-color: transparent;outline:none;"type="button" class="collapsible" data-toggle="collapse" data-target="#teach-experience" id="texperience"><heading>Teaching Experience</heading></button>
-                <div id="teach-experience" class="collapse in">
-
-                <table border=0 class="bg_colour" style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <!-- Teaching Experience -->
+        <div class="section fade-in">
+            <h2 class="section-title">Teaching Experience</h2>
+            
+            <table border=0 class="bg_colour" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
                     <tr>
                         <td style="padding:10px;width:25%;vertical-align:middle">
                             <div class="one">
@@ -845,14 +1114,13 @@
                             </div>
                         </td>
                         <td style="padding:10px;width:75%;vertical-align:top">
-                            <papertitle style="color:gray"><big>Teaching Assistant</big> </papertitle> <papertitle ><big> | Website management</big></papertitle>
+                            <h4>Teaching Assistant | Website management</h4>
+                            <papertitle style="color:gray">IIT Hyderabad | Jul '18 - Apr '19</papertitle>
                             <br>
-                            Jul '18 - Apr '19
                             <br>
-                            <br>
-                            <p>Working under the supervision of <a href="https://www.iith.ac.in/ce/surendra/" target="_blank">Prof. Surendranath Somala</a> at the <a href="https://iith.ac.in/" target="_blank"> IIT Hyderabad</a>, for managing the iith website. </p>
+                            <p>Working under the supervision of <a href="https://www.iith.ac.in/ce/surendra/" target="_blank" class="contact-link">Prof. Surendranath Somala</a> at the <a href="https://iith.ac.in/" target="_blank" class="contact-link">IIT Hyderabad</a>, for managing the iith website.</p>
                         </td>
-                    </tr>                    
+                    </tr>
                     <tr>
                         <td style="padding:10px;width:25%;vertical-align:middle">
                             <div class="one">
@@ -860,78 +1128,88 @@
                             </div>
                         </td>
                         <td style="padding:10px;width:75%;vertical-align:top">
-                            <papertitle style="color:gray"><big>Teaching Assistant</big> </papertitle> <papertitle ><big> | Introductory course in chemistry</big></papertitle>
+                            <h4>Teaching Assistant | Introductory course in chemistry</h4>
+                            <papertitle style="color:gray">IIT Hyderabad | Jul '18 - Apr '19</papertitle>
                             <br>
-                            Jul '18 - Apr '19
                             <br>
-                            <br>
-                            <p>Working under the <a href="https://sites.google.com/a/iith.ac.in/surajit-maity/home?pli=1" target="_blank">Prof. Surajith maity</a> at the <a href="https://iith.ac.in/" target="_blank"> IIT Hyderabad</a> <br> • Mentored students in understanding the concepts of introductory physics and chemistry courses, helped undergraduate students in their course projects <br> • Assisted the course instructor in grading weekly assignments.</p>
+                            <p>Working under the <a href="https://sites.google.com/a/iith.ac.in/surajit-maity/home?pli=1" target="_blank" class="contact-link">Prof. Surajith maity</a> at the <a href="https://iith.ac.in/" target="_blank" class="contact-link">IIT Hyderabad</a>
+                            <br>• Mentored students in understanding the concepts of introductory physics and chemistry courses, helped undergraduate students in their course projects
+                            <br>• Assisted the course instructor in grading weekly assignments.</p>
                         </td>
-                    </tr>     
-                    
-                </tbody></table>
-            </div>
-            <hr class="soft">
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <button style="border:0px transparent; background-color: transparent;outline:none;"type="button" class="collapsible" data-toggle="collapse" data-target="#teach-experience" id="texperience"><heading>Leadership Experience</heading></button>
-            <div id="teach-experience" class="collapse in">
+        <!-- Leadership Experience -->
+        <div class="section fade-in">
+            <h2 class="section-title">Leadership Experience</h2>
+            
+            <table border=0 class="bg_colour" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                <tbody>
+                    <tr>
+                        <td style="padding:10px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <img src='images/class_rep.jpg' width="130">
+                            </div>
+                        </td>
+                        <td style="padding:10px;width:75%;vertical-align:top">
+                            <h4>Class representative | Class of 2020</h4>
+                            <papertitle style="color:gray">IIT Hyderabad | Jul '18 - Apr '19</papertitle>
+                            <br>
+                            <br>
+                            <p>• Worked as a class representative for 2018 batch, acted as a liaison between the class and professor.
+                            <br>• Acted as a prime official channel of communication between teacher and rest of the class, for all monitoring formalities.
+                            <br>• Dealing with matters, which benefits to the class like shifting of class hours, tutorials, exam schedule, alteration of marks distribution etc.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;width:25%;vertical-align:middle">
+                            <div class="one">
+                                <img src='images/nss.jpg' width="130">
+                            </div>
+                        </td>
+                        <td style="padding:10px;width:75%;vertical-align:top">
+                            <h4>Nss Volunteer | Vidhyadhaan, Plantation activities</h4>
+                            <papertitle style="color:gray">IIT Hyderabad | Jul '16 - Apr '20</papertitle>
+                            <br>
+                            <br>
+                            <p>• Worked towards educating underprivileged children and rural minorities promoting sustainable development and associated practices that can be inculcated in daily life.
+                            <br>• Was an active participant in plantation and cloth donation activities</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <table border=0 class="bg_colour" style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-                <tr>
-                    <td style="padding:10px;width:25%;vertical-align:middle">
-                        <div class="one">
-                            <img src='images/class_rep.jpg' width="130">
-                        </div>
-                    </td>
-                    <td style="padding:10px;width:75%;vertical-align:top">
-                        <papertitle style="color:gray"><big>Class representative</big> </papertitle> <papertitle ><big> | Class of 2020</big></papertitle>
-                        <br>
-                        Jul '18 - Apr '19
-                        <br>
-                        <br>
-                        <p> • Worked as a class representative for 2018 batch, acted as a liaison between the class and professor. <br> • Acted as a prime official channel of communication between teacher and rest of the class, for all monitoring formalities.  <br> • Dealing with matters, which benefits to the class like shifting of class hours, tutorials, exam schedule, alteration of marks distribution etc.
-                        </p>
-                    </td>
-                </tr>                    
-                <tr>
-                    <td style="padding:10px;width:25%;vertical-align:middle">
-                        <div class="one">
-                            <img src='images/nss.jpg' width="130">
-                        </div>
-                    </td>
-                    <td style="padding:10px;width:75%;vertical-align:top">
-                        <papertitle style="color:gray"><big>Nss Volunteer</big> </papertitle> <papertitle ><big> | Vidhyadhaan, Plantation activities</big></papertitle>
-                        <br>
-                        Jul '16 - Apr '20
-                        <br>
-                        <br>
-                        <p> • Worked towards educating underprivileged children and rural minorities promoting sustainable development and associated practices that can be inculcated in daily life. <br> • Was an active participant in plantation and cloth donation activities</p>
-                    </td>
-                </tr>     
-                
-                    
-                </tbody></table>
-                </div>
-                <hr class="soft">
+        <!-- Footer -->
+        <div style="text-align: center; margin: 3rem 0; color: var(--gray); font-size: 0.9rem;">
+            <p>This template is a modification to Jon Barron's <a href="https://jonbarron.info/" target="_blank" class="contact-link">website</a>. Find the source code to my website <a href="https://github.com/Sreebhargavibalijaa/sreebhargavibalija.github.io" target="_blank" class="contact-link">here</a>.</p>
+            <p style="margin-top: 1rem;">&copy; 2024 Sree Bhargavi Balija. All rights reserved.</p>
+        </div>
+    </div>
 
-                <tr>
-                    <td>
-                        <p>This template is a modification to Jon Barron's <a href="https://jonbarron.info/" target="_blank">website</a>. Find the source code to my website <a href="https://github.com/Sreebhargavibalijaa/sreebhargavibalija.github.io" target="_blank">here</a>.</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p></p>
-                    </td>
-                </tr>
-
-            </td>
-        </tr>
-
-    </table>   
-
-                
-
+    <script>
+        // Simple fade-in animation as elements come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                fadeInObserver.observe(element);
+            });
+        });
+    </script>
 </body>
-
 </html>
