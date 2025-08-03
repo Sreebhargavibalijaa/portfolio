@@ -1,166 +1,320 @@
 <!DOCTYPE HTML>
 <html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Hi, Sree Bhargavi Balija Here. Please DELETE the two <script> tags below if you use this HTML, otherwise my analytics will track your page -->
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -old
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102766803-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-102766803-2');
-    </script> -->
-    
-    
-<!-- Google tag (gtag.js) New -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-75SGBCNR9N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-75SGBCNR9N');
-</script>
- -->
-
-
-    <title>Sree bhargavi balija</title>
-    
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <meta name="author" content="Sree Bhargavi balija">
+<head>
+    <meta charset="UTF-8">
+    <title>Sree Bhargavi Balija | ML Research Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Description" content="Sree Bhargavi balija | Machine Learning Grad@UCSD | ServiceNow | Software Engineer | IIT Hyderabad | Artificial Intelligence | Big Data | Natural Language Processing">
-    <meta name="keywords" content="Sree Bhargavi balija . Machine Learning Grad, UCSD, ServiceNow, IIT Hyderabad, Artificial Intelligence, Big Data, Natural Language Processing">
-
-    <!-- <link rel="stylesheet" type="text/css" href="stylesheet.css"> -->
-    <link rel="icon" type="image/png" href="images/ucsd-logo.jpg">
+    <meta name="description" content="Machine Learning Researcher & Engineer specializing in federated learning, generative AI, and scalable ML systems">
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-75SGBCNR9N"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-75SGBCNR9N');
-    </script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --light-gray: #f1f5f9;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light-gray);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+        
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 0 0 0.5rem 0;
+            line-height: 1.2;
+        }
+        
+        .title {
+            font-size: 1.4rem;
+            color: var(--gray);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-ribbon {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1.2rem;
+            display: inline-block;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-right: 1.5rem;
+            color: var(--gray);
+        }
+        
+        .contact-item svg {
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-link {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .contact-link:hover {
+            color: var(--primary-light);
+        }
+        
+        .section {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .highlight-list {
+            columns: 2;
+            column-gap: 3rem;
+            padding-left: 0;
+            list-style-type: none;
+        }
+        
+        .highlight-item {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+            break-inside: avoid;
+        }
+        
+        .highlight-marker {
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        .highlight-text {
+            font-weight: 500;
+        }
+        
+        .highlight-emphasis {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: var(--white);
+            color: var(--dark);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+        
+        .divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(37, 99, 235, 0.3), transparent);
+            margin: 2rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .highlight-list {
+                columns: 1;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
-<body class="bg_colour">
-    <table border=0 class="bg_colour" style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <tr style="padding:0px">
-            <td style="padding:0px">
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <img src="images/profilepic.jpg" alt="Sree Bhargavi Balija" class="profile-img">
+            
+            <div class="header-content">
+                <h1>Sree Bhargavi Balija</h1>
+                <p class="title">Machine Learning Research Engineer</p>
                 
-                <!-- Name tab -->
-                <table border=0 class="bg_colour" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-                    
-                    
-                    <tr style="padding:0px">
-                        <td style="padding:2.5%;width:40%;max-width:45%">
-                            <a href="images/profilepic.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/profilepic.jpg" class="img-circle"></a>
-                        </td>
-                        <td style="padding:2.5%;width:90%;vertical-align:left">
-                            <p style="text-align:center">
-                                <h1  style="text-align:center"><name>Sree Bhargavi balija</name></h1>
-                            </p>
-                            <p style="text-align:center">
-                            &nbsp|&nbsp
-                            <a href="#news" onclick=Expand("news")>News</a>
-                            &nbsp|&nbsp
-                            <a href="#experience" onclick=Expand("experience")>Experience</a>
-                            &nbsp|&nbsp
-                            <a href="#publications" onclick=Expand("publications")>Publications</a>
-                            &nbsp|&nbsp
-                            <a href="#projects" onclick=Expand("projects")>Projects</a>
-                            &nbsp|&nbsp
-                            <a href="mailto:sbalija@ucsd.edu">Contact</a>
-                            &nbsp|&nbsp
-                            </p>
-                            <p style="text-align:center">
-                            Actively looking for Full Time positions as a ML/AI Engineer. 
-                            </p>
-                        </td>
-                        
-                        <td style="padding:2.5%;width:10%;max-width:10%">
-                            
-                        </td>
-                    </tr>
-                    <!-- <tr>
-                    <td colspan="2">
-                        <p style="text-align:center">
-                            &nbsp|&nbsp
-                            <a href="#news" onclick=Expand("news")>News</a>
-                            &nbsp|&nbsp
-                            <a href="#experience" onclick=Expand("experience")>Experience</a>
-                            &nbsp|&nbsp
-                            <a href="#publications" onclick=Expand("publications")>Publications</a>
-                            &nbsp|&nbsp
-                            <a href="#projects" onclick=Expand("projects")>Projects</a>
-                            &nbsp|&nbsp
-                            <a href="#contact" onclick=Expand("contact")>Contact</a>
-                            &nbsp|&nbsp
-                        </p>
-                    </td>
-                    </tr> -->
-                </tbody></table>
+                <div class="contact-ribbon">
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 16.92V19.92C22 20.47 21.55 20.92 21 20.92H19C14.03 20.92 9.07996 15.97 9.07996 11V9C9.07996 8.45 9.52996 8 10.08 8H13.08C13.63 8 14.08 8.45 14.08 9V11C14.08 11.55 14.53 12 15.08 12H17.08C17.63 12 18.08 12.45 18.08 13V16.92C18.08 17.47 17.63 17.92 17.08 17.92H15.08C14.53 17.92 14.08 17.47 14.08 16.92V15" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M20 5C20.55 5 21 5.45 21 6V7C21 9.76 18.76 12 16 12H15C14.45 12 14 11.55 14 11V10C14 9.45 13.55 9 13 9H11C10.45 9 10 8.55 10 8V7C10 4.24 12.24 2 15 2H16C16.55 2 17 2.45 17 3V4C17 4.55 17.45 5 18 5H20Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            (858) 319-6721
+                        </div>
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22 6L12 13L2 6" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <a href="mailto:sbalija@ucsd.edu" class="contact-link">sbalija@ucsd.edu</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 19C4 20.5 4 16.5 2 16M16 22V18.13C16.0375 17.6532 15.9731 17.1738 15.811 16.7238C15.6489 16.2738 15.3929 15.8634 15.06 15.52C18.2 15.17 21.5 13.98 21.5 8.52C21.4997 7.12383 20.9627 5.7812 20 4.77C20.4559 3.54851 20.4236 2.19835 19.91 0.999999C19.91 0.999999 18.73 0.649999 16 2.48C13.708 1.85882 11.292 1.85882 9 2.48C6.27 0.649999 5.09 0.999999 5.09 0.999999C4.57638 2.19835 4.54414 3.54851 5 4.77C4.03013 5.7887 3.49252 7.14346 3.5 8.55C3.5 13.97 6.8 15.16 9.94 15.55C9.611 15.89 9.35726 16.2954 9.19531 16.7399C9.03335 17.1844 8.96681 17.6581 9 18.13V22" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <a href="https://github.com/Sreebhargavibalijaa" target="_blank" class="contact-link">GitHub</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 9H2V21H6V9Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <a href="https://www.linkedin.com/in/balija-sree-bhargavi-b7638517a/" target="_blank" class="contact-link">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-#################
+        <!-- Professional Summary -->
+        <div class="section">
+            <h2 class="section-title">Professional Expertise</h2>
+            <ul class="highlight-list">
+                <li class="highlight-item">
+                    <span class="highlight-marker">•</span>
+                    <span class="highlight-text"><span class="highlight-emphasis">ML Research Engineer</span> with 3+ years pioneering work in distributed machine learning systems, specializing in federated learning architectures and generative AI applications. Published author with 7 peer-reviewed papers including collaborations with MIT Media Lab.</span>
+                </li>
+                <li class="highlight-item">
+                    <span class="highlight-marker">•</span>
+                    <span class="highlight-text">Engineered <span class="highlight-emphasis">cutting-edge RAG systems</span> leveraging GPT-4 and LLaMA-2, utilizing LangChain and Hugging Face ecosystems to automate knowledge workflows, resulting in 40%+ efficiency gains across enterprise applications.</span>
+                </li>
+                <li class="highlight-item">
+                    <span class="highlight-marker">•</span>
+                    <span class="highlight-text">Architected <span class="highlight-emphasis">privacy-preserving AI solutions</span> through federated learning frameworks (TensorFlow Federated, Flower), enabling secure model training across decentralized data silos while maintaining regulatory compliance.</span>
+                </li>
+                <li class="highlight-item">
+                    <span class="highlight-marker">•</span>
+                    <span class="highlight-text">Designed and deployed <span class="highlight-emphasis">enterprise-grade MLOps pipelines</span> incorporating CI/CD workflows, real-time model monitoring, and feature store implementations, serving 100K+ users with 99.9% system uptime.</span>
+                </li>
+                <li class="highlight-item">
+                    <span class="highlight-marker">•</span>
+                    <span class="highlight-text">Developed <span class="highlight-emphasis">quantitative risk models</span> using XGBoost and LightGBM that improved fraud detection accuracy by 25% while reducing false positives by 18% in production financial systems.</span>
+                </li>
+                <li class="highlight-item">
+                    <span class="highlight-marker">•</span>
+                    <span class="highlight-text">Optimized <span class="highlight-emphasis">high-performance APIs</span> using FastAPI and gRPC, achieving sub-50ms latency for 95% of requests in latency-sensitive AI applications processing 10K+ QPS.</span>
+                </li>
+            </ul>
+        </div>
 
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="data/Sreebhargavibalija_resume.pdf" target="_blank" class="btn btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+                    <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 2V8H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 13H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 17H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 9H9H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Download Full CV
+            </a>
+            <a href="mailto:sbalija@ucsd.edu" class="btn btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22 6L12 13L2 6" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Contact for Opportunities
+            </a>
+            <a href="https://scholar.google.com" target="_blank" class="btn btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+                    <path d="M10 15V17C10 18.6569 11.3431 20 13 20H19C20.6569 20 22 18.6569 22 17V11C22 9.34315 20.6569 8 19 8H13C11.3431 8 10 9.34315 10 11V13" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 8H12" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 12L2 8L6 4" stroke="#1e293b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Academic Publications
+            </a>
+        </div>
 
-
-<!-- Minimalist Profile Header -->
-<div style="max-width: 800px; margin: 0 auto; padding: 30px; font-family: 'Inter', sans-serif; color: #333;">
-    <!-- Name & Title -->
-    <h1 style="font-size: 2.2rem; margin-bottom: 5px; font-weight: 700; color: #1a365d;">Sree Bhargavi Balija</h1>
-    <h2 style="font-size: 1.3rem; margin-top: 0; font-weight: 500; color: #4a5568;">Machine Learning Researcher & Engineer</h2>
-    
-    <!-- Contact Links (Inline) -->
-    <div style="margin: 20px 0; line-height: 1.8;">
-        <span style="margin-right: 15px;">📞 (858) 319-6721</span>
-        <span style="margin-right: 15px;">✉️ <a href="mailto:sbalija@ucsd.edu" style="color: #3182ce; text-decoration: none;">sbalija@ucsd.edu</a></span>
-        <span style="margin-right: 15px;">🔗 <a href="https://github.com/Sreebhargavibalijaa" target="_blank" style="color: #3182ce; text-decoration: none;">GitHub</a></span>
-        <span>👔 <a href="https://www.linkedin.com/in/balija-sree-bhargavi-b7638517a/" target="_blank" style="color: #3182ce; text-decoration: none;">LinkedIn</a></span>
+        <hr class="divider">
     </div>
-
-    <!-- Professional Summary -->
-    <div style="border-top: 1px solid #e2e8f0; padding-top: 20px;">
-        <h3 style="font-size: 1.1rem; margin-bottom: 15px; color: #2d3748;">PROFESSIONAL SUMMARY</h3>
-        <ul style="padding-left: 20px; margin: 0; list-style-type: none;">
-            <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
-                <span style="position: absolute; left: 0; color: #4299e1;">•</span>
-                <strong>ML Researcher & Engineer</strong> with 3+ years in scalable ML systems and federated learning (7 published papers, incl. MIT Media Lab collaboration)
-            </li>
-            <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
-                <span style="position: absolute; left: 0; color: #4299e1;">•</span>
-                Built <strong>RAG systems</strong> with GPT-4/LLaMA-2 (LangChain/Hugging Face) that reduced manual effort by 40%+
-            </li>
-            <li style="margin-bottom: 10px; position: relative; padding-left: 25px;">
-                <span style="position: absolute; left: 0; color: #4299e1;">•</span>
-                Designed <strong>MLOps pipelines</strong> for 100K+ user systems with 99.9% uptime APIs
-            </li>
-        </ul>
-    </div>
-
-    <!-- Honors Section (Compact) -->
-    <div style="margin-top: 25px; font-size: 0.9rem; color: #4a5568;">
-        <div style="display: inline-block; margin-right: 15px; margin-bottom: 10px;">🎤 <strong>Presenter</strong> - Stanford</div>
-        <div style="display: inline-block; margin-right: 15px;">🏆 <strong>Academic Excellence Award</strong> - IIT Hyderabad</div>
-        <div style="display: inline-block;">📜 <strong>Co-authored</strong> inter-cloud FL architecture with MIT/Meta/Stanford</div>
-    </div>
-</div>
-
-<!-- Subtle Divider -->
-<hr style="border: 0; height: 1px; background: linear-gradient(to right, transparent, rgba(66, 153, 225, 0.3), transparent); margin: 20px 0;">
-
-
-
+</body>
+</html>
 
 
 
