@@ -1,826 +1,623 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sree Bhargavi Balija | ML Research Engineer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Machine Learning Researcher & Engineer specializing in federated learning, generative AI, and scalable ML systems">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #2563eb;
-            --primary-light: #3b82f6;
-            --dark: #1e293b;
-            --gray: #64748b;
-            --light-gray: #f1f5f9;
-            --white: #ffffff;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --container-width: 70%;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light-gray);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .main-container {
-            width: var(--container-width);
-            max-width: 1200px;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .hero {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 3rem;
-        }
-        
-        .profile-img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--white);
-            box-shadow: var(--shadow);
-        }
-        
-        .header-content {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: var(--dark);
-            margin: 0 0 0.5rem 0;
-            line-height: 1.2;
-        }
-        
-        .title {
-            font-size: 1.4rem;
-            color: var(--gray);
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-ribbon {
-            background: var(--white);
-            border-radius: 10px;
-            padding: 1.2rem;
-            display: inline-block;
-            box-shadow: var(--shadow);
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-right: 1.5rem;
-            color: var(--gray);
-        }
-        
-        .contact-item svg {
-            margin-right: 0.5rem;
-            flex-shrink: 0;
-        }
-        
-        .contact-link {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        .contact-link:hover {
-            color: var(--primary-light);
-        }
-        
-        .section {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow);
-        }
-        
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--dark);
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--light-gray);
-        }
-        
-        .highlight-list {
-            columns: 2;
-            column-gap: 3rem;
-            padding-left: 0;
-            list-style-type: none;
-        }
-        
-        .highlight-item {
-            margin-bottom: 0.8rem;
-            position: relative;
-            padding-left: 2rem;
-            break-inside: avoid;
-        }
-        
-        .highlight-marker {
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-        }
-        
-        .highlight-text {
-            font-weight: 500;
-        }
-        
-        .highlight-emphasis {
-            font-weight: 600;
-            color: var(--dark);
-        }
-        
-        .action-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.8rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-light);
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background: var(--white);
-            color: var(--dark);
-            border: 1px solid #e2e8f0;
-        }
-        
-        .btn-secondary:hover {
-            border-color: var(--primary-light);
-            transform: translateY(-2px);
-        }
-        
-        .divider {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(37, 99, 235, 0.3), transparent);
-            margin: 1.5rem 0;
-        }
-        
-        /* News & Honors Section */
-        .news-container {
-            width: 100%;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin-bottom: 1.5rem;
-        }
-        
-        .awards-scroll {
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 10px 0;
-            border-radius: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
-        }
-        
-        .scrolling-text {
-            display: inline-block;
-            padding-left: 100%;
-            animation: scroll 15s linear infinite;
-        }
-        
-        .news-timeline {
-            padding-left: 20px;
-            border-left: 3px solid #a31f34;
-            margin-left: 15px;
-        }
-        
-        .news-item {
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .news-date {
-            position: absolute;
-            left: -28px;
-            top: 0;
-            background: #a31f34;
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7em;
-            font-weight: bold;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .news-content {
-            margin-left: 30px;
-            padding: 12px 15px;
-            background: white;
-            border-radius: 6px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            transition: all 0.2s ease;
-        }
-        
-        .research-impact {
-            display: flex;
-            justify-content: space-around;
-            margin: 30px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        /* Experience Section */
-        .experience-item {
-            display: flex;
-            margin-bottom: 2rem;
-        }
-        
-        .experience-logo {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            margin-right: 1.5rem;
-            align-self: flex-start;
-        }
-        
-        .experience-content {
-            flex: 1;
-        }
-        
-        .experience-title {
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .experience-company {
-            color: var(--primary);
-            font-weight: 500;
-        }
-        
-        .experience-date {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .experience-description {
-            margin-top: 0.5rem;
-        }
-        
-        .experience-description li {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Projects Section */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .project-link-button {
-            display: inline-block;
-            padding: 6px 12px;
-            margin: 0 5px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 14px;
-            transition: background-color 0.3s;
-        }
+<meta charset="UTF-8">
+<title>Sree Bhargavi Balija | CS PhD Researcher</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,500&family=Instrument+Sans:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#f7f4ef;
+  --paper:#fefcf8;
+  --ink:#18181b;
+  --ink2:#3f3f46;
+  --muted:#71717a;
+  --rule:#e4e0d8;
+  --red:#b91c1c;
+  --red-soft:#fef2f2;
+  --blue:#1d4ed8;
+  --blue-soft:#eff6ff;
+  --gold:#92400e;
+  --gold-soft:#fffbeb;
+  --green:#166534;
+  --green-soft:#f0fdf4;
+  --sans:'Instrument Sans',sans-serif;
+  --serif:'Fraunces',serif;
+  --mono:'Fira Code',monospace;
+  --w:900px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
 
-        .project-link-button:hover {
-            background-color: #0056b3;
-        }
-        .project-card {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .project-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        
-        .project-content {
-            padding: 1.5rem;
-        }
-        
-        .project-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-description {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 0.5rem;
-        }
-        
-        .project-link {
-            font-size: 0.8rem;
-            padding: 0.3rem 0.8rem;
-            background: var(--light-gray);
-            border-radius: 4px;
-            text-decoration: none;
-            color: var(--dark);
-        }
-        
-        /* Meta Project Highlight */
-        .meta-project {
-            border: 2px solid var(--primary);
-            position: relative;
-        }
-        
-        .meta-project-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--primary);
-            color: white;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
-        
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        
-        @media (max-width: 768px) {
-            :root {
-                --container-width: 95%;
-            }
-            
-            .highlight-list {
-                columns: 1;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.nav-inner{max-width:var(--w);margin:0 auto;padding:0 2rem;height:54px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--sans);font-size:1.1rem;font-weight:700;color:var(--ink);letter-spacing:-0.01em}
+.nav-links{display:flex;gap:0.25rem;list-style:none;align-items:center}
+.nav-links a{font-size:0.85rem;font-weight:400;letter-spacing:0em;color:var(--ink2);padding:0.3rem 0.75rem;border-radius:6px;border:1.5px solid transparent;transition:color .15s,border-color .15s}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+.nav-links a.active{color:var(--blue);border-color:var(--blue);font-weight:500}
+
+/* ── LAYOUT ── */
+.page{max-width:var(--w);margin:0 auto;padding:0 2rem 6rem}
+
+/* ── HERO ── */
+.hero{display:grid;grid-template-columns:180px 1fr;gap:0;padding:4.5rem 0 0;align-items:start}
+.hero-left{display:flex;flex-direction:column;align-items:center;gap:1rem;padding-top:0.5rem}
+.avatar-ring{width:148px;height:148px;border-radius:50%;border:3px solid var(--rule);overflow:hidden;background:#ddd;position:relative}
+.avatar-ring img{width:100%;height:100%;object-fit:cover;display:block}
+.avatar-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2.4rem;color:var(--muted);background:var(--paper)}
+.hero-social{display:flex;flex-direction:column;gap:0.4rem;width:100%}
+.s-link{display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;font-family:var(--mono);color:var(--muted);padding:0.3rem 0.6rem;border:1px solid var(--rule);border-radius:5px;background:var(--paper);transition:all .15s;white-space:nowrap}
+.s-link:hover{color:var(--blue);border-color:var(--blue);text-decoration:none;background:var(--blue-soft)}
+.s-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
+
+.hero-right{padding-left:3rem;padding-bottom:3rem;border-bottom:1px solid var(--rule)}
+.hero-eyebrow{font-family:var(--mono);font-size:0.72rem;color:var(--red);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.6rem}
+.hero-name{font-family:var(--serif);font-size:3rem;font-weight:500;letter-spacing:-0.04em;line-height:1.05;color:var(--ink);margin-bottom:0.5rem}
+.hero-name em{font-style:italic;font-weight:300}
+.hero-affil{font-size:0.9rem;color:var(--muted);margin-bottom:1.4rem}
+.hero-affil strong{color:var(--ink2);font-weight:600}
+.hero-bio{font-size:0.95rem;color:var(--ink2);line-height:1.75;max-width:520px;margin-bottom:1.8rem}
+.hero-bio a{color:var(--red)}
+
+/* ── STAT ROW ── */
+.stat-row{display:flex;gap:0;margin:2.5rem 0 0;border-top:1px solid var(--rule)}
+.stat-cell{flex:1;padding:1.4rem 1rem;border-right:1px solid var(--rule);position:relative}
+.stat-cell:last-child{border-right:none}
+.stat-n{font-family:var(--serif);font-size:2rem;font-weight:500;color:var(--ink);line-height:1;display:block}
+.stat-l{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);display:block;margin-top:0.3rem}
+
+/* ── SECTION ── */
+.section{margin-top:4rem}
+.sh{display:flex;align-items:center;gap:1rem;margin-bottom:2rem}
+.sh h2{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--ink);letter-spacing:-0.02em;white-space:nowrap;font-style:italic}
+.sh-line{flex:1;height:1px;background:var(--rule)}
+.sh-num{font-family:var(--mono);font-size:0.7rem;color:var(--muted)}
+
+/* ── RESEARCH TAGS ── */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:0.5rem}
+.rtag{font-size:0.8rem;font-family:var(--mono);padding:0.3rem 0.8rem;border-radius:20px;border:1px solid var(--rule);background:var(--paper);color:var(--ink2);transition:all .15s;cursor:default}
+.rtag:hover{border-color:var(--ink2);background:var(--ink);color:var(--paper)}
+
+/* ── TICKER ── */
+.ticker-outer{overflow:hidden;border:1px solid var(--rule);border-radius:8px;background:var(--paper);padding:0.6rem 0;margin-bottom:2rem}
+.ticker-track{display:flex;animation:tick 35s linear infinite;white-space:nowrap}
+.ticker-track:hover{animation-play-state:paused}
+.t-item{font-family:var(--mono);font-size:0.75rem;color:var(--ink2);padding:0 2rem;flex-shrink:0}
+.t-sep{color:var(--rule);padding:0 0.5rem}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── NEWS ── */
+.news-row{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+.news-row:last-child{border-bottom:none}
+.n-date{font-family:var(--mono);font-size:0.7rem;color:var(--muted);flex-shrink:0;width:68px;padding-top:3px}
+.n-badge{font-family:var(--mono);font-size:0.65rem;font-weight:500;padding:0.2rem 0.55rem;border-radius:4px;flex-shrink:0;margin-top:2px;white-space:nowrap}
+.b-pub{background:var(--red-soft);color:var(--red);border:1px solid #fecaca}
+.b-award{background:var(--gold-soft);color:var(--gold);border:1px solid #fde68a}
+.b-talk{background:var(--blue-soft);color:var(--blue);border:1px solid #bfdbfe}
+.b-news{background:var(--green-soft);color:var(--green);border:1px solid #bbf7d0}
+.n-body{font-size:0.88rem;color:var(--ink2);line-height:1.6;flex:1}
+.n-body strong{color:var(--ink);font-weight:600}
+.n-body em{color:var(--muted);font-style:italic}
+
+/* ── PUBLICATIONS ── */
+.pub-item{padding:1.4rem 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start}
+.pub-item:last-child{border-bottom:none}
+.pub-title{font-family:var(--serif);font-size:0.98rem;font-weight:300;font-style:italic;color:var(--ink);line-height:1.5;margin-bottom:0.3rem}
+.pub-meta{font-size:0.78rem;color:var(--muted)}
+.pub-meta .venue{color:var(--red);font-weight:600;font-style:normal}
+.pub-links{display:flex;flex-direction:column;gap:0.4rem;align-items:flex-end}
+.pl{font-size:0.72rem;font-family:var(--mono);padding:0.2rem 0.65rem;border:1px solid var(--rule);border-radius:4px;color:var(--blue);background:var(--paper);white-space:nowrap;transition:all .15s}
+.pl:hover{background:var(--blue-soft);border-color:var(--blue);text-decoration:none}
+
+/* ── EXPERIENCE ── */
+.exp-item{display:flex;gap:2rem;padding:1.5rem 0;border-bottom:1px solid var(--rule)}
+.exp-item:last-child{border-bottom:none}
+.exp-meta{flex-shrink:0;width:110px;text-align:right}
+.exp-date{font-family:var(--mono);font-size:0.72rem;color:var(--muted);line-height:1.6}
+.exp-body{}
+.exp-role{font-weight:600;font-size:0.95rem;color:var(--ink);margin-bottom:0.2rem}
+.exp-org{font-size:0.85rem;color:var(--blue);margin-bottom:0.65rem}
+.exp-ul{padding-left:1.1rem;font-size:0.86rem;color:var(--ink2);line-height:1.6}
+.exp-ul li{margin-bottom:0.3rem}
+
+/* ── PROJECTS ── */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.proj-card{background:var(--paper);padding:1.5rem;transition:background .15s;position:relative}
+.proj-card:hover{background:var(--cream)}
+.proj-card.feat{background:var(--ink);color:var(--cream)}
+.proj-card.feat:hover{background:#27272a}
+.feat-label{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem}
+.proj-card.feat .feat-label{color:#a1a1aa}
+.proj-name{font-family:var(--serif);font-size:1.1rem;font-weight:500;font-style:italic;color:var(--ink);margin-bottom:0.4rem}
+.proj-card.feat .proj-name{color:var(--cream)}
+.proj-desc{font-size:0.83rem;color:var(--ink2);line-height:1.6;margin-bottom:0.8rem}
+.proj-card.feat .proj-desc{color:#d4d4d8}
+.proj-chips{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.8rem}
+.chip{font-size:0.68rem;font-family:var(--mono);padding:0.15rem 0.5rem;border-radius:3px;background:var(--cream);color:var(--muted);border:1px solid var(--rule)}
+.proj-card.feat .chip{background:#3f3f46;color:#d4d4d8;border-color:#52525b}
+.proj-links{display:flex;gap:0.4rem}
+.plink{font-size:0.72rem;font-family:var(--mono);padding:0.2rem 0.65rem;border:1px solid var(--rule);border-radius:4px;color:var(--blue);background:var(--paper)}
+.plink:hover{background:var(--blue-soft);text-decoration:none}
+.proj-card.feat .plink{border-color:#52525b;color:#93c5fd;background:#3f3f46}
+.proj-card.feat .plink:hover{background:#52525b;text-decoration:none}
+
+/* ── EDU ── */
+.edu-item{display:flex;gap:2rem;padding:1.2rem 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+.edu-item:last-child{border-bottom:none}
+.edu-yr{font-family:var(--mono);font-size:0.72rem;color:var(--muted);flex-shrink:0;width:110px;text-align:right;padding-top:3px}
+.edu-deg{font-weight:600;font-size:0.95rem;color:var(--ink)}
+.edu-school{font-size:0.85rem;color:var(--blue);margin-top:0.1rem}
+.edu-courses{font-size:0.8rem;color:var(--muted);margin-top:0.35rem;line-height:1.6}
+
+/* ── SKILLS ── */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.skill-cell{background:var(--paper);padding:1.2rem}
+.sk-head{font-family:var(--mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:0.6rem}
+.sk-body{font-size:0.83rem;color:var(--ink2);line-height:1.7}
+
+/* ── FOOTER ── */
+.footer{margin-top:5rem;padding-top:2rem;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;font-family:var(--mono);color:var(--muted)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  .hero{grid-template-columns:1fr;gap:2rem}
+  .hero-left{flex-direction:row;align-items:flex-start;padding-top:0}
+  .hero-social{flex-direction:row;flex-wrap:wrap}
+  .hero-right{padding-left:0}
+  .hero-name{font-size:2.2rem}
+  .proj-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .exp-item{flex-direction:column;gap:0.3rem}
+  .exp-meta{text-align:left;width:auto}
+  .nav-links{display:none}
+  .stat-row{flex-wrap:wrap}
+  .stat-cell{min-width:50%}
+}
+</style>
 </head>
 <body>
-    <div class="main-container">
-        <div class="container">
-            <!-- Hero Section -->
-            <div class="hero">
-                <img src="images/profile.png" alt="Sree Bhargavi Balija" class="profile-img">
-                
-                <div class="header-content">
-                    <h1>Sree Bhargavi Balija</h1>
-                    <p class="title">Machine Learning Research Engineer</p>
-                    
-                    <div class="contact-ribbon">
-                        <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-                            <div class="contact-item">
-                                <svg width="18" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M22 6L12 13L2 6" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <a href="mailto:sbalija@ucsd.edu" class="contact-link">sbalija@ucsd.edu</a>
-                            </div>
-                            <div class="contact-item">
-                                <svg width="18" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 19C4 20.5 4 16.5 2 16M16 22V18.13C16.0375 17.6532 15.9731 17.1738 15.811 16.7238C15.6489 16.2738 15.3929 15.8634 15.06 15.52C18.2 15.17 21.5 13.98 21.5 8.52C21.4997 7.12383 20.9627 5.7812 20 4.77C20.4559 3.54851 20.4236 2.19835 19.91 0.999999C19.91 0.999999 18.73 0.649999 16 2.48C13.708 1.85882 11.292 1.85882 9 2.48C6.27 0.649999 5.09 0.999999 5.09 0.999999C4.57638 2.19835 4.54414 3.54851 5 4.77C4.03013 5.7887 3.49252 7.14346 3.5 8.55C3.5 13.97 6.8 15.16 9.94 15.55C9.611 15.89 9.35726 16.2954 9.19531 16.7399C9.03335 17.1844 8.96681 17.6581 9 18.13V22" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <a href="https://github.com/Sreebhargavibalijaa" target="_blank" class="contact-link">GitHub</a>
-                            </div>
-                            <div class="contact-item">
-                                <svg width="18" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M6 9H2V21H6V9Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <a href="https://www.linkedin.com/in/sree-bhargavi-balija-b7638517a/" target="_blank" class="contact-link">LinkedIn</a>
-                            </div>
-                            <div class="contact-item">
-                                <svg width="18" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M22 16.92V19.92C22 20.47 21.55 20.92 21 20.92H19C14.03 20.92 9.07996 15.97 9.07996 11V9C9.07996 8.45 9.52996 8 10.08 8H13.08C13.63 8 14.08 8.45 14.08 9V11C14.08 11.55 14.53 12 15.08 12H17.08C17.63 12 18.08 12.45 18.08 13V16.92C18.08 17.47 17.63 17.92 17.08 17.92H15.08C14.53 17.92 14.08 17.47 14.08 16.92V15" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M20 5C20.55 5 21 5.45 21 6V7C21 9.76 18.76 12 16 12H15C14.45 12 14 11.55 14 11V10C14 9.45 13.55 9 13 9H11C10.45 9 10 8.55 10 8V7C10 4.24 12.24 2 15 2H16C16.55 2 17 2.45 17 3V4C17 4.55 17.45 5 18 5H20Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <a href="https://sreebhargavibalijaa.github.io/portfolio/data/Sreebhargavibalija_resume.pdf" target="_blank" class="contact-link">Resume</a>
-                            </div>                        
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Professional Summary -->
-            <div class="section">
-                <h2 class="section-title">Professional Expertise</h2>
-                <ul class="highlight-list">
-                    <li class="highlight-item">
-                        <span class="highlight-marker">•</span>
-                        <span class="highlight-text"><span class="highlight-emphasis">ML Research Engineer</span> with 3+ years pioneering work in distributed machine learning systems.</span>
-                    </li>
-                    <li class="highlight-item">
-                        <span class="highlight-marker">•</span>
-                        <span class="highlight-text">Designed and deployed <span class="highlight-emphasis">enterprise-grade MLOps pipelines</span> incorporating CI/CD workflows, serving 100K+ users with 99.9% system uptime.</span>
-                    </li>
-                    <li class="highlight-item">
-                        <span class="highlight-marker">•</span>
-                        <span class="highlight-text">Developed <span class="highlight-emphasis">quantitative risk models</span> using XGBoost and LightGBM in production systems.</span>
-                    </li>
-                    <li class="highlight-item">
-                        <span class="highlight-marker">•</span>
-                        <span class="highlight-text">Optimized <span class="highlight-emphasis">high-performance APIs</span> using FastAPI and gRPC, achieving sub-50ms latency in latency-sensitive AI applications.</span>
-                    </li>
-                </ul>
-            </div>
-            <!-- News & Honors Section -->
-            <div class="section">
-                <h2 class="section-title">News & Honors</h2>
-                
-                <!-- Dual Scrolling Awards Headers -->
-                <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
-                    <!-- First Scroller (Research Focus) -->
-                    <div class="awards-scroll" style="background: linear-gradient(90deg, #f0f7ff, #e0edff);">
-                        <div class="scrolling-text" style="animation: scroll 15s linear infinite;">
-                            <span style="margin-right: 40px;">🏆 MIT NANDA Radius Fellow 2025</span>
-                            <span style="margin-right: 40px;">🎓 UC San Diego ML Graduate</span>
-                            <span style="margin-right: 40px;">💻 Terminal Bench Contributor - Stanford</span>
-                            <span style="margin-right: 40px;">📜 AAAI 2024 Presenter - Stanford</span>
-                            <span style="margin-right: 40px;">🔬 Algoverse AI Research Fellow</span>
-                            <span style="margin-right: 40px;">💡 NSF AI-SDM Workshop Presenter - CMU</span>
-                            <span style="margin-right: 40px;">🧠 EleutherAI Open AI Research Fellow</span>
-                            <span style="margin-right: 40px;">🧬 BioSYS 2024 Presenter</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Second Scroller (Technical Achievements) -->
-                    <div class="awards-scroll" style="background: linear-gradient(90deg, #fff5f0, #ffe8e0);">
-                        <div class="scrolling-text" style="animation: scroll 18s linear infinite;">
-                            <span style="margin-right: 40px;">🏆 Academic Excellence Award, IIT Hyderabad</span>
-                            <span style="margin-right: 40px;">🔭 Skill development Award, ServiceNow</span>
-                            <span style="margin-right: 40px;">🏅 IMMO Silver Medalist</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- News Timeline -->
-                <div class="news-timeline">
-                    <!-- Sep 2025 -->
-                    <div class="news-item">
-                        <div class="news-date">SEP</div>
-                        <div class="news-content">
-                            <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                                <strong>Thrilled to share that my poster has been accepted at NeurIPS 2025</strong>, in collaboration with <span style="color: #a31f34; font-weight: 600;">WIML</span>: 
-                                <em>"Hybrid SNN-Transformer Networks for Event-Based, Energy-Efficient Large-Scale Learning"</em>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Aug 2025 -->
-                    <div class="news-item">
-                        <div class="news-date">AUG</div>
-                        <div class="news-content">
-                            <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                              <strong> Oral Presentation at the 3rd International Conference on Artificial Intelligence and Machine Learning (AIM-2026)</strong> 
-                              under the session <em>“High Performance Computing.”</em> 
-                              The presentation is titled <em>"EcoFlow: An AI-Optimized GPU Orchestrator for Exascale Sustainability"</em>.
-                            </p>
-                        </div>
-                    </div>
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">Sree Bhargavi Balija</span>
+    <ul class="nav-links">
+      <li><a href="#research">Research Focus</a></li>
+      <li><a href="#news">Highlights</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </div>
+</nav>
 
-                    <!-- July 2025 -->
-                    <div class="news-item">
-                        <div class="news-date">JUL</div>
-                        <div class="news-content">
-                            <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                                <strong>Co-authored research paper</strong> with <span style="color: #a31f34; font-weight: 600;">MIT Media Lab</span>, <strong>Meta</strong>, and <strong>Stanford</strong>: 
-                                <em>"An Index-based Federated Registry Architecture for Secure, Capability-Aware Agent Discovery"</em>
-                            </p>
-                        </div>
-                    </div>
+<div class="page">
 
-                    <div class="news-item">
-                        <div class="news-date">JUL</div>
-                        <div class="news-content">
-                            <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                                Selected as <span style="color: #a31f34; font-weight: 600;">MIT NANDA Radius Fellow</span> for 2025 - joining an elite cohort of researchers working on Nanda project.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- June 2025 -->
-                    <div class="news-item">
-                        <div class="news-date" style="background: #2a5885;">JUN</div>
-                        <div class="news-content">
-                            <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                                Project accepted to the <strong>2025 NSF AI-SDM Workshop</strong> on Human-AI Complementarity for Decision Making
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- May 2025 Additions -->
-                    <div class="news-item">
-                        <div class="news-date" style="background: #4CAF50;">MAY</div>
-                        <div class="news-content">
-                            <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                                Accepted to <strong>Algoverse AI Research Program</strong> 2025 - Selected among top candidates for advanced AI research initiative
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="news-item">
-                        <div class="news-date" style="background: #4CAF50;">MAY</div>
-                        <div class="news-content">
-                            <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                                Contributed to <strong>Terminal Bench</strong> project with <span style="color: #8B0000; font-weight: 600;">Prof. Ludwig</span> at <strong>Stanford</strong> - Developing benchmarking tools for AI terminal applications
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- June 2024 Graduation -->
-                    <div class="news-item">
-                        <div class="news-date" style="background: #2a5885;">JUN</div>
-                        <div class="news-content">
-                            <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                                Graduated from <span style="color: #2a5885; font-weight: 600;">UC San Diego</span> with Master's degree in <strong>Machine Learning</strong>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- April 2024 AAAI -->
-                    <div class="news-item">
-                        <div class="news-date" style="background: #d12f2f;">APR</div>
-                        <div class="news-content">
-                            <p style="margin: 0; color: #333; line-height: 1.4; font-size: 0.95em;">
-                                Published at <span style="color: #d12f2f; font-weight: 600;">AAAI 2024</span> (Stanford): 
-                                <em>"Building Communication Efficient Asynchronous Peer-to-Peer Federated LLMs with Blockchain"</em>
-                                <br><small>SB Balija, A Nanda, D Sahoo. <em>Proceedings of the AAAI Symposium Series</em> 3(1), 288-292</small>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Research Impact Footer -->
-                <div class="research-impact">
-                    <div>
-                        <div style="font-size: 1.5em; font-weight: bold; color: #333;">28+</div>
-                        <div style="font-size: 0.85em; color: #555;">Citations</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 1.5em; font-weight: bold; color: #333;">9</div>
-                        <div style="font-size: 0.85em; color: #555;">Publications</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 1.5em; font-weight: bold; color: #333;">3</div>
-                        <div style="font-size: 0.85em; color: #555;">Fellowships</div>
-                    </div>
-                    <div>
-                        <div style="font-size: 1.5em; font-weight: bold; color: #333;">4</div>
-                        <div style="font-size: 0.85em; color: #555;">Research Programs</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Experience Section -->
-            <div class="section">
-                <h2 class="section-title">Professional Experience</h2>
-                
-                <div class="experience-item">
-                    <img src="images/akdene.png" alt="Akdene Technologies" class="experience-logo">
-                    <div class="experience-content">
-                        <div class="experience-title">Machine Learning Engineer</div>
-                        <div class="experience-company">Akdene Technologies</div>
-                        <div class="experience-date">Mar 2025 – Present | USA</div>
-                        <div class="experience-description">
-                            <ul>
-                                <li>Developed an AI-powered financial risk engine using TensorFlow, XGBoost, and PyTorch Geometric, deploying real-time fraud detection and credit scoring for 100K+ customers in under 3 months</li>
-                                <li>Built a customer analytics system with SQL, Pandas, and Langchain, reducing data retrieval time from 30 minutes to under 5 minutes for financial reporting teams</li>
-                                <li>Built an Agentic AI chatbot using GPT-4o, RAG, and AutoGen on Django, cutting support workload by 120+ hrs/month and slashing response time by 65% via real-time semantic caching and multi-agent automation</li>
-                                <li>Deployed on serverless AWS with auto-scaling Kubernetes, achieving 99.9% uptime while reducing API costs by 30% through LoRA fine-tuning and Redis Vector Search</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <img src="images/servicenow.png" alt="ServiceNow" class="experience-logo">
-                    <div class="experience-content">
-                        <div class="experience-title">Software Engineer</div>
-                        <div class="experience-company">ServiceNow</div>
-                        <div class="experience-date">Jun 2020 – Aug 2022 | India</div>
-                        <div class="experience-description">
-                            <ul>
-                                <li>Deployed a scalable backend microservice using Java, Spring Boot, and REST APIs within 6 months, improving data processing speed by 3x for enterprise clients</li>
-                                <li>Developed a real-time data visualization dashboard using JavaScript and Elasticsearch in 5 months, enabling real-time monitoring for over 500K events per day</li>
-                                <li>Implemented a secure authentication system using OAuth2, API Development, and system integration, reducing unauthorized access incidents by 60% in the first year</li>
-                                <li>Accelerated cloud-based deployment on GCP, reducing infrastructure costs by 25% while maintaining 79% uptime</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-<!-- Projects Section -->
-<div class="section">
-    <h2 class="section-title">Featured Projects</h2>
-    
-    <div class="project-grid">
-        <!-- Highlighted Meta Project -->
-        <div class="project-card meta-project">
-            <div class="meta-project-badge">Featured</div>
-            <img src="images/autopatch.png" alt="AutoPatch+" class="project-image">
-            <div class="project-content">
-                <div class="project-title">AutoPatch+</div>
-                <div class="project-description">Next-gen AI code validation platform with hallucination detection for generative coding, showcased at MIT AI Summit 2025</div>
-                <div class="project-links">
-                    <a href="https://autopatchplus.com/" class="project-link-button" target="_blank">Website</a>
-                    <a href="https://www.youtube.com/watch?v=ZciOolTdWDs&list=PL3ouPKWYyiH5U20JDj2l_SaHeu1uiJy97&index=14" class="project-link-button" target="_blank">Demo</a> 
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card">
-            <img src="images/pixprompt.png" alt="PixPrompt" class="project-image">
-            <div class="project-content">
-                <div class="project-title">PixPrompt</div>
-                <div class="project-description">Multimodal small LLM of size 125M parameters for efficient image-text generation</div>
-                <div class="project-links">
-                    <a href="https://huggingface.co/spaces/bhargavi909/Pixprompt" class="project-link-button" target="_blank">Code</a>
-                    <a href="https://huggingface.co/spaces/bhargavi909/Pixprompt" class="project-link-button" target="_blank">Paper</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card">
-            <img src="images/federated.png" alt="Federated LLMs" class="project-image">
-            <div class="project-content">
-                <div class="project-title">Peer-to-Peer Federated LLMs</div>
-                <div class="project-description">Communication efficient asynchronous federated learning framework for LLMs with blockchain</div>
-                <div class="project-links">
-                    <a href="https://ojs.aaai.org/index.php/AAAI-SS/article/view/31212" class="project-link-button" target="_blank">Paper</a>
-                    <a href="https://github.com/Sreebhargavibalijaa/SmartTalent-AI--Interview-Agent" class="project-link-button" target="_blank">Code</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card">
-            <img src="images/cptquant.png" alt="CPTQuant" class="project-image">
-            <div class="project-content">
-                <div class="project-title">CPTQuant</div>
-                <div class="project-description">Novel mixed precision quantization techniques for efficient deployment of large language models</div>
-                <div class="project-links">
-                    <a href="https://github.com/Sreebhargavibalijaa/Mixed_Precision_Quantization" class="project-link-button" target="_blank">Code</a>
-                    <a href="https://arxiv.org/pdf/2412.03599?" class="project-link-button" target="_blank">Paper</a>
-                </div>
-            </div>
-        </div>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-left">
+      <div class="avatar-ring">
+        <img src="images/profile.png" alt="Sree Bhargavi Balija" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="avatar-fallback" style="display:none">SB</div>
+      </div>
+      <div class="hero-social">
+        <a class="s-link" href="mailto:sbalija@ucsd.edu"><span class="s-dot"></span>Email</a>
+        <a class="s-link" href="https://scholar.google.com" target="_blank"><span class="s-dot"></span>Scholar</a>
+        <a class="s-link" href="https://github.com/Sreebhargavibalijaa" target="_blank"><span class="s-dot"></span>GitHub</a>
+        <a class="s-link" href="https://www.linkedin.com/in/sree-bhargavi-balija-b7638517a/" target="_blank"><span class="s-dot"></span>LinkedIn</a>
+        <a class="s-link" href="https://sreebhargavibalijaa.github.io/portfolio/data/Sreebhargavibalija_resume.pdf" target="_blank"><span class="s-dot"></span>CV / Résumé</a>
+      </div>
     </div>
+
+    <div class="hero-right">
+      <div class="hero-eyebrow">PhD Researcher · Computer Science</div>
+      <h1 class="hero-name">Sree Bhargavi <em>Balija</em></h1>
+      <div class="hero-affil"><strong>University of Missouri, Columbia</strong> &nbsp;·&nbsp; MS UC San Diego &nbsp;·&nbsp; BE IIT Hyderabad</div>
+      <p class="hero-bio">
+        I build and study <strong>federated learning systems</strong>, <strong>privacy-preserving ML</strong>, and <strong>agentic AI infrastructure</strong>. My research asks how intelligent systems can collaborate without centralizing data, and how LLMs can be made efficient and trustworthy at scale. I publish at AAAI, NeurIPS, and collaborate with <a href="#">MIT Media Lab</a>, <a href="#">Meta Research</a>, and <a href="#">Stanford</a>.
+      </p>
+
+      <div class="stat-row">
+        <div class="stat-cell"><span class="stat-n">75+</span><span class="stat-l">Citations</span></div>
+        <div class="stat-cell"><span class="stat-n">11</span><span class="stat-l">Publications</span></div>
+        <div class="stat-cell"><span class="stat-n">3</span><span class="stat-l">Fellowships</span></div>
+        <div class="stat-cell"><span class="stat-n">5+</span><span class="stat-l">Collaborations</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- RESEARCH FOCUS -->
+  <section class="section" id="research">
+    <div class="sh"><span class="sh-num">01</span><h2>Research Interests</h2><div class="sh-line"></div></div>
+    <div class="tag-cloud">
+      <span class="rtag">Federated Learning</span>
+      <span class="rtag">Privacy-Preserving ML</span>
+      <span class="rtag">LLM Efficiency & Quantization</span>
+      <span class="rtag">Agentic AI Systems</span>
+      <span class="rtag">Decentralized AI</span>
+      <span class="rtag">Differential Privacy</span>
+      <span class="rtag">Multi-Agent Frameworks</span>
+      <span class="rtag">Neuromorphic Computing</span>
+      <span class="rtag">Trustworthy AI</span>
+      <span class="rtag">Conformal Prediction</span>
+      <span class="rtag">Blockchain for ML</span>
+      <span class="rtag">GPU Orchestration</span>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="section" id="news">
+    <div class="sh"><span class="sh-num">02</span><h2>News & Honors</h2><div class="sh-line"></div></div>
+
+    <div class="ticker-outer">
+      <div class="ticker-track">
+        <span class="t-item">🏆 MIT NANDA Radius Fellow 2025</span><span class="t-sep">·</span>
+        <span class="t-item">📄 NeurIPS 2025 WIML Workshop</span><span class="t-sep">·</span>
+        <span class="t-item">🎤 AIM-2026 Oral Presentation</span><span class="t-sep">·</span>
+        <span class="t-item">🧠 EleutherAI Open AI Research Fellow</span><span class="t-sep">·</span>
+        <span class="t-item">📜 AAAI 2024 · AAAI 2025 · Stanford</span><span class="t-sep">·</span>
+        <span class="t-item">💡 NSF AI-SDM Workshop · CMU</span><span class="t-sep">·</span>
+        <span class="t-item">🔬 Algoverse AI Research Fellow 2025</span><span class="t-sep">·</span>
+        <span class="t-item">🏅 IMMO Silver Medalist</span><span class="t-sep">·</span>
+        <span class="t-item">🎓 Academic Excellence · IIT Hyderabad</span><span class="t-sep">·</span>
+        <!-- dup for loop -->
+        <span class="t-item">🏆 MIT NANDA Radius Fellow 2025</span><span class="t-sep">·</span>
+        <span class="t-item">📄 NeurIPS 2025 WIML Workshop</span><span class="t-sep">·</span>
+        <span class="t-item">🎤 AIM-2026 Oral Presentation</span><span class="t-sep">·</span>
+        <span class="t-item">🧠 EleutherAI Open AI Research Fellow</span><span class="t-sep">·</span>
+        <span class="t-item">📜 AAAI 2024 · AAAI 2025 · Stanford</span><span class="t-sep">·</span>
+        <span class="t-item">💡 NSF AI-SDM Workshop · CMU</span><span class="t-sep">·</span>
+        <span class="t-item">🔬 Algoverse AI Research Fellow 2025</span><span class="t-sep">·</span>
+        <span class="t-item">🏅 IMMO Silver Medalist</span><span class="t-sep">·</span>
+        <span class="t-item">🎓 Academic Excellence · IIT Hyderabad</span><span class="t-sep">·</span>
+      </div>
+    </div>
+
+    <div class="news-row">
+      <span class="n-date">Sep 2025</span>
+      <span class="n-badge b-pub">Paper</span>
+      <span class="n-body">Poster accepted at <strong>NeurIPS 2025 (WIML Workshop)</strong> — <em>"Hybrid SNN-Transformer Networks for Event-Based, Energy-Efficient Large-Scale Learning."</em></span>
+    </div>
+    <div class="news-row">
+      <span class="n-date">Aug 2025</span>
+      <span class="n-badge b-talk">Oral</span>
+      <span class="n-body">Oral presentation at <strong>AIM-2026</strong>, HPC session — <em>"EcoFlow: An AI-Optimized GPU Orchestrator for Exascale Sustainability."</em></span>
+    </div>
+    <div class="news-row">
+      <span class="n-date">Aug 2025</span>
+      <span class="n-badge b-news">Position</span>
+      <span class="n-body">Joined <strong>Fujitsu Research of America</strong> as Software Engineering Intern. Working on GPU utilization and agentic AI integration in the Kojuchi platform.</span>
+    </div>
+    <div class="news-row">
+      <span class="n-date">Jul 2025</span>
+      <span class="n-badge b-award">Fellowship</span>
+      <span class="n-body">Selected as <strong>MIT NANDA Radius Fellow 2025</strong> — researching decentralized agent discovery, trust, and microtransaction-based interoperability.</span>
+    </div>
+    <div class="news-row">
+      <span class="n-date">Jul 2025</span>
+      <span class="n-badge b-pub">Paper</span>
+      <span class="n-body">Co-authored paper with <strong>MIT Media Lab, Meta, and Stanford</strong> — <em>"An Index-based Federated Registry Architecture for Secure, Capability-Aware Agent Discovery."</em></span>
+    </div>
+    <div class="news-row">
+      <span class="n-date">Jun 2025</span>
+      <span class="n-badge b-talk">Workshop</span>
+      <span class="n-body">Project accepted to <strong>NSF AI-SDM Workshop 2025</strong> on Human-AI Complementarity for Decision Making (CMU).</span>
+    </div>
+    <div class="news-row">
+      <span class="n-date">May 2025</span>
+      <span class="n-badge b-award">Fellowship</span>
+      <span class="n-body">Full scholarship recipient — <strong>Algoverse AI Research Program 2025</strong>. Selected among top candidates.</span>
+    </div>
+    <div class="news-row">
+      <span class="n-date">May 2025</span>
+      <span class="n-badge b-news">Collab</span>
+      <span class="n-body">Contributed to <strong>Terminal Bench</strong> with Prof. Ludwig at <strong>Stanford</strong> — benchmarking tools for AI terminal applications.</span>
+    </div>
+    <div class="news-row">
+      <span class="n-date">Jan 2026</span>
+      <span class="n-badge b-news">PhD</span>
+      <span class="n-body">Started <strong>PhD in Computer Science</strong> at <strong>University of Missouri, Columbia.</strong></span>
+    </div>
+    <div class="news-row">
+      <span class="n-date">Apr 2024</span>
+      <span class="n-badge b-pub">Paper</span>
+      <span class="n-body">Published at <strong>AAAI 2024</strong> (Stanford) — <em>"Building Communication Efficient Asynchronous Peer-to-Peer Federated LLMs with Blockchain."</em> SB Balija, A Nanda, D Sahoo. Proceedings AAAI Symposium Series 3(1), 288–292.</span>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="section" id="publications">
+    <div class="sh"><span class="sh-num">03</span><h2>Publications</h2><div class="sh-line"></div></div>
+
+    <div class="pub-item">
+      <div>
+        <div class="pub-title">Hybrid SNN-Transformer Networks for Event-Based, Energy-Efficient Large-Scale Learning</div>
+        <div class="pub-meta">SB Balija &nbsp;·&nbsp; <span class="venue">NeurIPS 2025, WIML Workshop</span></div>
+      </div>
+      <div class="pub-links"><span class="pl">Poster</span></div>
+    </div>
+
+    <div class="pub-item">
+      <div>
+        <div class="pub-title">EcoFlow: An AI-Optimized GPU Orchestrator for Exascale Sustainability</div>
+        <div class="pub-meta">SB Balija &nbsp;·&nbsp; <span class="venue">AIM-2026, Oral</span></div>
+      </div>
+      <div class="pub-links"><span class="pl">Talk</span></div>
+    </div>
+
+    <div class="pub-item">
+      <div>
+        <div class="pub-title">An Index-based Federated Registry Architecture for Secure, Capability-Aware Agent Discovery: Leveraging NANDA and ANS</div>
+        <div class="pub-meta">SB Balija, et al. (MIT Media Lab · Meta · Stanford) &nbsp;·&nbsp; <span class="venue">Preprint 2025</span></div>
+      </div>
+      <div class="pub-links"><a class="pl" href="#">Paper</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div>
+        <div class="pub-title">The Trust Fabric: Decentralized Interoperability and Economic Coordination for the Agentic Web</div>
+        <div class="pub-meta">SB Balija, et al. &nbsp;·&nbsp; <span class="venue">Preprint 2025</span></div>
+      </div>
+      <div class="pub-links"><a class="pl" href="#">Paper</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div>
+        <div class="pub-title">Fortifying the Agentic Web: A Unified Zero-Trust Architecture Against Logic-layer Threats</div>
+        <div class="pub-meta">SB Balija, et al. &nbsp;·&nbsp; <span class="venue">Preprint 2025</span></div>
+      </div>
+      <div class="pub-links"><a class="pl" href="#">Paper</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div>
+        <div class="pub-title">Explore-Then-Commit: The Optimal Strategy for Scientific Breakthrough Discovery</div>
+        <div class="pub-meta">SB Balija, et al. &nbsp;·&nbsp; <span class="venue">AAAI 2025</span></div>
+      </div>
+      <div class="pub-links"><span class="pl">Paper</span></div>
+    </div>
+
+    <div class="pub-item">
+      <div>
+        <div class="pub-title">AILUMINATE: Introducing v1.0 of the AI Risk and Reliability Benchmark from MLCommons</div>
+        <div class="pub-meta">SB Balija, et al. &nbsp;·&nbsp; <span class="venue">MLCommons 2025</span></div>
+      </div>
+      <div class="pub-links"><a class="pl" href="#">Paper</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div>
+        <div class="pub-title">CPTQuant — A Novel Mixed Precision Quantization Technique for Large Language Models</div>
+        <div class="pub-meta">SB Balija, et al. &nbsp;·&nbsp; <span class="venue">arXiv 2024</span></div>
+      </div>
+      <div class="pub-links">
+        <a class="pl" href="https://arxiv.org/pdf/2412.03599" target="_blank">arXiv</a>
+        <a class="pl" href="https://github.com/Sreebhargavibalijaa/Mixed_Precision_Quantization" target="_blank">Code</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div>
+        <div class="pub-title">Decoding Federated Learning: The FedNAM+ Conformal Revolution</div>
+        <div class="pub-meta">SB Balija, et al. &nbsp;·&nbsp; <span class="venue">Preprint 2024</span></div>
+      </div>
+      <div class="pub-links"><a class="pl" href="#">Paper</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div>
+        <div class="pub-title">Building Communication Efficient Asynchronous Peer-to-Peer Federated LLMs with Blockchain</div>
+        <div class="pub-meta">SB Balija, A Nanda, D Sahoo &nbsp;·&nbsp; <span class="venue">AAAI 2024, Stanford</span> &nbsp;·&nbsp; Proceedings AAAI Symposium Series 3(1):288–292</div>
+      </div>
+      <div class="pub-links"><a class="pl" href="https://ojs.aaai.org/index.php/AAAI-SS/article/view/31212" target="_blank">Paper</a></div>
+    </div>
+
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="sh"><span class="sh-num">04</span><h2>Research & Industry Experience</h2><div class="sh-line"></div></div>
+
+    <div class="exp-item">
+      <div class="exp-meta"><div class="exp-date">Aug 2025 –<br>Current</div></div>
+      <div class="exp-body">
+        <div class="exp-role">Software Engineering Intern</div>
+        <div class="exp-org">Fujitsu Research of America · USA</div>
+        <ul class="exp-ul">
+          <li>Optimizing GPU utilization in the ACB project via workload balancing and scheduling strategies.</li>
+          <li>Implementing multi-server configurations to enhance parallel processing efficiency.</li>
+          <li>Exploring agentic AI integration into Kojuchi platform for autonomous decision-making and workflow orchestration.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta"><div class="exp-date">Jul 2025</div></div>
+      <div class="exp-body">
+        <div class="exp-role">ML Researcher — Fellowship</div>
+        <div class="exp-org">MIT NANDA + Radius Collaboration · USA</div>
+        <ul class="exp-ul">
+          <li>Designed Radius Testnet trust and discovery layer for agent marketplaces with smart contract–based reputation mechanisms.</li>
+          <li>Implemented MCP server monetization workflows — payments, invoicing, EVMAuth, TypeScript SDK adapters.</li>
+          <li>Researched agentic AI ecosystems: decentralized discovery, trust, and microtransaction-based interoperability.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta"><div class="exp-date">Apr–Jul 2025</div></div>
+      <div class="exp-body">
+        <div class="exp-role">Research Collaborator — Differential Privacy</div>
+        <div class="exp-org">Prof. Praneeth Vepakomma · MIT · Remote</div>
+        <ul class="exp-ul">
+          <li>Built patient-specific differential privacy pipeline with DP-Prompt paraphrasing and privacy-preserving embeddings.</li>
+          <li>Optimized embeddings per patient for scalable privacy analysis across multimodal clinical datasets.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta"><div class="exp-date">Apr 2024</div></div>
+      <div class="exp-body">
+        <div class="exp-role">Lead Researcher — Transformer Optimization</div>
+        <div class="exp-org">Meta Research Collaborator (CHAI Model) · USA</div>
+        <ul class="exp-ul">
+          <li>Pioneered hybrid sparse attention + precision fine-tuning across 3 domain-specific datasets — +15% task accuracy, −50% inference time.</li>
+          <li>Engineered memory-optimized transformer pipelines reducing GPU memory by 4GB+ per training cycle.</li>
+          <li>Innovated AI-driven clustering for token embeddings, reducing pre-processing overhead by 40%.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta"><div class="exp-date">Mar–Jul 2025</div></div>
+      <div class="exp-body">
+        <div class="exp-role">Machine Learning Engineer</div>
+        <div class="exp-org">Akdene Technologies · USA</div>
+        <ul class="exp-ul">
+          <li>AI-powered financial risk engine (TensorFlow, XGBoost, PyTorch Geometric) — real-time fraud detection for 100K+ customers.</li>
+          <li>Agentic chatbot (GPT-4o, RAG, AutoGen on Django) — reduced support workload 120+ hrs/month, response time by 65%.</li>
+          <li>Serverless AWS + Kubernetes deployment achieving 99.9% uptime; reduced API costs 30% via LoRA fine-tuning.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta"><div class="exp-date">Jun 2020 –<br>Aug 2022</div></div>
+      <div class="exp-body">
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-org">ServiceNow · India</div>
+        <ul class="exp-ul">
+          <li>Scalable backend microservices (Java, Spring Boot, REST) — 3× data processing improvement for enterprise clients.</li>
+          <li>OAuth2 authentication system — reduced unauthorized access incidents by 60%.</li>
+          <li>GCP cloud migration — reduced infrastructure costs 25%.</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="sh"><span class="sh-num">05</span><h2>Selected Projects</h2><div class="sh-line"></div></div>
+    <div class="proj-grid">
+
+      <div class="proj-card feat">
+        <div class="feat-label">Featured · MIT AI Summit 2025</div>
+        <div class="proj-name">AutoPatch+</div>
+        <div class="proj-desc">Next-gen AI code validation platform with hallucination detection for generative coding. Co-founded and showcased at MIT AI Summit 2025.</div>
+        <div class="proj-chips"><span class="chip">LLM</span><span class="chip">Code Validation</span><span class="chip">Hallucination Detection</span></div>
+        <div class="proj-links">
+          <a class="plink" href="https://autopatchplus.com/" target="_blank">Website</a>
+          <a class="plink" href="https://www.youtube.com/watch?v=ZciOolTdWDs" target="_blank">Demo</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="feat-label">AAAI 2024</div>
+        <div class="proj-name">P2P Federated LLMs</div>
+        <div class="proj-desc">Communication-efficient asynchronous federated learning for LLMs using blockchain-based decentralized coordination.</div>
+        <div class="proj-chips"><span class="chip">Federated Learning</span><span class="chip">Blockchain</span><span class="chip">LLMs</span></div>
+        <div class="proj-links">
+          <a class="plink" href="https://ojs.aaai.org/index.php/AAAI-SS/article/view/31212" target="_blank">Paper</a>
+          <a class="plink" href="https://github.com/Sreebhargavibalijaa/SmartTalent-AI--Interview-Agent" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="feat-label">arXiv 2024</div>
+        <div class="proj-name">CPTQuant</div>
+        <div class="proj-desc">Mixed-precision quantization for efficient LLM deployment on resource-constrained systems. Novel calibration techniques for post-training quantization.</div>
+        <div class="proj-chips"><span class="chip">Quantization</span><span class="chip">LLM Efficiency</span><span class="chip">Mixed Precision</span></div>
+        <div class="proj-links">
+          <a class="plink" href="https://arxiv.org/pdf/2412.03599" target="_blank">arXiv</a>
+          <a class="plink" href="https://github.com/Sreebhargavibalijaa/Mixed_Precision_Quantization" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="feat-label">Hugging Face</div>
+        <div class="proj-name">PixPrompt</div>
+        <div class="proj-desc">Multimodal small LLM (125M parameters) for efficient image-text generation. Designed for edge deployment.</div>
+        <div class="proj-chips"><span class="chip">Multimodal</span><span class="chip">Small LLM</span><span class="chip">Image-Text</span></div>
+        <div class="proj-links">
+          <a class="plink" href="https://huggingface.co/spaces/bhargavi909/Pixprompt" target="_blank">Demo</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="sh"><span class="sh-num">06</span><h2>Education</h2><div class="sh-line"></div></div>
+
+    <div class="edu-item">
+      <div class="edu-yr">Jan 2026 –<br>Present</div>
+      <div>
+        <div class="edu-deg">PhD in Computer Science</div>
+        <div class="edu-school">University of Missouri, Columbia</div>
+        <div class="edu-courses">Federated Learning · Privacy-Preserving ML · Agentic AI Systems · LLM Efficiency</div>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-yr">Sep 2022 –<br>Jun 2024</div>
+      <div>
+        <div class="edu-deg">MS in Machine Learning and Data Science</div>
+        <div class="edu-school">University of California, San Diego</div>
+        <div class="edu-courses">Deep Generative Models · AI Learning Algorithms · Statistical Learning · Recommender Systems · Introduction to Deep Learning</div>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-yr">Jul 2016 –<br>May 2020</div>
+      <div>
+        <div class="edu-deg">Bachelor of Engineering</div>
+        <div class="edu-school">Indian Institute of Technology, Hyderabad</div>
+        <div class="edu-courses">Algorithms · Data Structures · Probabilistic Graphical Models · Artificial Intelligence · DBMS</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="sh"><span class="sh-num">07</span><h2>Technical Skills</h2><div class="sh-line"></div></div>
+    <div class="skills-grid">
+      <div class="skill-cell"><div class="sk-head">Languages</div><div class="sk-body">Python (Expert) · Java · JavaScript · C++ · R · Fortran · Kotlin · Swift</div></div>
+      <div class="skill-cell"><div class="sk-head">ML / Research</div><div class="sk-body">Federated Learning · NLP · Deep Learning · Multimodal AI · Conformal Predictions · Model Interpretability</div></div>
+      <div class="skill-cell"><div class="sk-head">Frameworks</div><div class="sk-body">PyTorch · TensorFlow · Hugging Face · LangChain · XGBoost · Scikit-learn · Django · Keras</div></div>
+      <div class="skill-cell"><div class="sk-head">LLM / Agentic</div><div class="sk-body">GPT-4o · LLaMA-2 · RAG · AutoGen · Multi-agent · NLTK · Google Gemini · OpenAI API</div></div>
+      <div class="skill-cell"><div class="sk-head">MLOps / Infra</div><div class="sk-body">Kubernetes · Docker · CI/CD · MLflow · Evidently · Feast · GitHub Actions · ArgoCD · Prometheus</div></div>
+      <div class="skill-cell"><div class="sk-head">Cloud / Data</div><div class="sk-body">AWS · GCP · Azure · FastAPI · gRPC · Elasticsearch · Kafka · Cassandra · Redis · SQL</div></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>© 2025 Sree Bhargavi Balija</span>
+    <span>CS PhD Researcher · University of Missouri, Columbia</span>
+    <span><a href="mailto:sbalija@ucsd.edu" style="color:var(--muted)">sbalija@ucsd.edu</a></span>
+  </footer>
+
 </div>
-            <!-- Education Section -->
-            <div class="section">
-                <h2 class="section-title">Education</h2>
-                
-                <div class="experience-item">
-                    <img src="images/ucsd.png" alt="UC San Diego" class="experience-logo">
-                    <div class="experience-content">
-                        <div class="experience-title">Master of Science in Machine Learning and Data Science</div>
-                        <div class="experience-company">University of California, San Diego</div>
-                        <div class="experience-date">Sep 2022 - Jun 2024</div>
-                        <div class="experience-description">
-                            <p>Relevant Coursework: Deep Generative Models, AI Learning Algorithms, Sensing and Estimation, Random Processes, Recommender Systems and Data Mining, Search and Optimization, Linear Algebra and its Applications, Introduction to Deep Learning and Applications, Programming for Data Analysis, Statistical Learning</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="experience-item">
-                    <img src="images/iith.png" alt="IIT Hyderabad" class="experience-logo">
-                    <div class="experience-content">
-                        <div class="experience-title">Bachelor's in Engineering</div>
-                        <div class="experience-company">Indian Institute of Technology, Hyderabad</div>
-                        <div class="experience-date">Jul 2016 - May 2020</div>
-                        <div class="experience-description">
-                            <p>Relevant Coursework: Algorithms, DBMS, Data Structures, Probabilistic Graphical Models, Artificial Intelligence</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Technical Skills Section -->
-            <div class="section">
-                <h2 class="section-title">Technical Skills</h2>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;">
-                    <div>
-                        <h3 style="margin-bottom: 0.5rem; color: var(--primary);">Programming</h3>
-                        <ul style="margin-top: 0;">
-                            <li>Python (Expert)</li>
-                            <li>Java</li>
-                            <li>JavaScript</li>
-                            <li>C++</li>
-                            <li>R</li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 style="margin-bottom: 0.5rem; color: var(--primary);">ML/AI</h3>
-                        <ul style="margin-top: 0;">
-                            <li>Machine Learning</li>
-                            <li>Deep Learning</li>
-                            <li>NLP</li>
-                            <li>Federated Learning</li>
-                            <li>Transformers</li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 style="margin-bottom: 0.5rem; color: var(--primary);">Frameworks</h3>
-                        <ul style="margin-top: 0;">
-                            <li>TensorFlow</li>
-                            <li>PyTorch</li>
-                            <li>XGBoost</li>
-                            <li>LangChain</li>
-                            <li>Hugging Face</li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 style="margin-bottom: 0.5rem; color: var(--primary);">Tools</h3>
-                        <ul style="margin-top: 0;">
-                            <li>Kubernetes</li>
-                            <li>Docker</li>
-                            <li>Git</li>
-                            <li>CI/CD</li>
-                            <li>MLOps</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="divider">
-            
-            <div style="text-align: center; margin-top: 2rem; color: var(--gray); font-size: 0.9rem;">
-                <p>© 2024 Sree Bhargavi Balija. All rights reserved.</p>
-            </div>
-        </div>
-    </div>
+<script>
+(function(){
+  const links = document.querySelectorAll('.nav-links a');
+  const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  function update(){
+    let active = sections[0];
+    sections.forEach(s => { if(window.scrollY >= s.offsetTop - 80) active = s; });
+    links.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + active.id);
+    });
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
 </body>
 </html>
