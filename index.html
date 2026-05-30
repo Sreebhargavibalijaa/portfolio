@@ -8,14 +8,14 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --cream:#f7f4ef;
-  --paper:#fefcf8;
-  --ink:#18181b;
-  --ink2:#3f3f46;
-  --muted:#71717a;
-  --rule:#e4e0d8;
-  --red:#b91c1c;
-  --red-soft:#fef2f2;
+  --cream:#eef2ec;
+  --paper:#f6f9f5;
+  --ink:#1a2218;
+  --ink2:#354030;
+  --muted:#6b7d65;
+  --rule:#cfdacb;
+  --red:#7c3aed;
+  --red-soft:#f5f3ff;
   --blue:#1d4ed8;
   --blue-soft:#eff6ff;
   --gold:#92400e;
@@ -28,12 +28,12 @@
   --w:900px;
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;font-size:16px}
 a{color:var(--blue);text-decoration:none}
 a:hover{text-decoration:underline}
 
 /* ── NAV ── */
-nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+nav{position:sticky;top:0;z-index:200;background:rgba(238,242,236,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
 .nav-inner{max-width:var(--w);margin:0 auto;padding:0 2rem;height:54px;display:flex;align-items:center;justify-content:space-between}
 .nav-brand{font-family:var(--sans);font-size:1.1rem;font-weight:700;color:var(--ink);letter-spacing:-0.01em}
 .nav-links{display:flex;gap:0.25rem;list-style:none;align-items:center}
@@ -55,28 +55,32 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop
 .s-link:hover{color:var(--blue);border-color:var(--blue);text-decoration:none;background:var(--blue-soft)}
 .s-dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
 
-.hero-right{padding-left:3rem;padding-bottom:3rem;border-bottom:1px solid var(--rule)}
-.hero-eyebrow{font-family:var(--mono);font-size:0.72rem;color:var(--red);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.6rem}
-.hero-name{font-family:var(--serif);font-size:3rem;font-weight:500;letter-spacing:-0.04em;line-height:1.05;color:var(--ink);margin-bottom:0.5rem}
-.hero-name em{font-style:italic;font-weight:300}
-.hero-affil{font-size:0.9rem;color:var(--muted);margin-bottom:1.4rem}
-.hero-affil strong{color:var(--ink2);font-weight:600}
-.hero-bio{font-size:0.95rem;color:var(--ink2);line-height:1.75;max-width:520px;margin-bottom:1.8rem}
-.hero-bio a{color:var(--red)}
+.hero-right{padding-left:3rem;padding-bottom:2rem;border-bottom:1px solid var(--rule)}
+.hero-eyebrow{font-family:var(--mono);font-size:0.72rem;color:var(--red);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.7rem;display:flex;align-items:center;gap:0.5rem}
+.hero-eyebrow::before{content:'';display:inline-block;width:20px;height:1.5px;background:var(--red)}
+.hero-name{font-family:var(--serif);font-size:3rem;font-weight:500;letter-spacing:-0.04em;line-height:1.05;color:var(--ink);margin-bottom:0.6rem}
+.hero-name em{font-style:italic;font-weight:300;color:var(--ink2)}
+.hero-affil{font-size:0.88rem;color:var(--muted);margin-bottom:1.6rem;display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap}
+.hero-affil strong{color:var(--ink2);font-weight:600;font-size:0.9rem}
+.hero-affil .sep{color:var(--rule);font-size:1rem}
+.hero-bio{font-size:0.97rem;color:var(--ink2);line-height:1.8;max-width:530px;margin-bottom:0}
+.hero-bio strong{color:var(--ink);font-weight:600;border-bottom:1.5px solid var(--rule);padding-bottom:0.5px}
+.hero-bio a{color:var(--red);font-weight:500;border-bottom:1px solid transparent;transition:border-color .15s}
+.hero-bio a:hover{text-decoration:none;border-bottom-color:var(--red)}
 
 /* ── STAT ROW ── */
-.stat-row{display:flex;gap:0;margin:2.5rem 0 0;border-top:1px solid var(--rule)}
-.stat-cell{flex:1;padding:1.4rem 1rem;border-right:1px solid var(--rule);position:relative}
+.stat-row{display:flex;gap:0;margin:2rem 0 0;border-top:1px solid var(--rule)}
+.stat-cell{flex:1;padding:1rem 0.75rem;border-right:1px solid var(--rule);position:relative}
 .stat-cell:last-child{border-right:none}
-.stat-n{font-family:var(--serif);font-size:2rem;font-weight:500;color:var(--ink);line-height:1;display:block}
-.stat-l{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);display:block;margin-top:0.3rem}
+.stat-n{font-family:var(--serif);font-size:1.25rem;font-weight:500;color:var(--ink);line-height:1;display:block}
+.stat-l{font-size:0.65rem;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);display:block;margin-top:0.25rem}
 
 /* ── SECTION ── */
-.section{margin-top:4rem}
+.section{margin-top:2.5rem}
 .sh{display:flex;align-items:center;gap:1rem;margin-bottom:2rem}
-.sh h2{font-family:var(--serif);font-size:1.3rem;font-weight:500;color:var(--ink);letter-spacing:-0.02em;white-space:nowrap;font-style:italic}
-.sh-line{flex:1;height:1px;background:var(--rule)}
-.sh-num{font-family:var(--mono);font-size:0.7rem;color:var(--muted)}
+.sh h2{font-family:var(--serif);font-size:1.35rem;font-weight:500;color:var(--ink);letter-spacing:-0.02em;white-space:nowrap;font-style:italic}
+.sh-line{flex:1;height:1px;background:linear-gradient(to right,var(--rule),transparent)}
+.sh-num{font-family:var(--mono);font-size:0.65rem;color:var(--muted);letter-spacing:0.05em}
 
 /* ── RESEARCH TAGS ── */
 .tag-cloud{display:flex;flex-wrap:wrap;gap:0.5rem}
@@ -85,66 +89,66 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop
 
 /* ── TICKER ── */
 .ticker-outer{overflow:hidden;border:1px solid var(--rule);border-radius:8px;background:var(--paper);padding:0.6rem 0;margin-bottom:2rem}
-.ticker-track{display:flex;animation:tick 35s linear infinite;white-space:nowrap}
+.ticker-track{display:flex;animation:tick 12s linear infinite;white-space:nowrap}
 .ticker-track:hover{animation-play-state:paused}
 .t-item{font-family:var(--mono);font-size:0.75rem;color:var(--ink2);padding:0 2rem;flex-shrink:0}
 .t-sep{color:var(--rule);padding:0 0.5rem}
-@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.ticker-track{animation-duration:15s!important}
 
 /* ── NEWS ── */
-.news-row{display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--rule);align-items:flex-start}
+.news-row{display:flex;gap:1rem;padding:1.05rem 0;border-bottom:1px solid var(--rule);align-items:flex-start}
 .news-row:last-child{border-bottom:none}
-.n-date{font-family:var(--mono);font-size:0.7rem;color:var(--muted);flex-shrink:0;width:68px;padding-top:3px}
-.n-badge{font-family:var(--mono);font-size:0.65rem;font-weight:500;padding:0.2rem 0.55rem;border-radius:4px;flex-shrink:0;margin-top:2px;white-space:nowrap}
-.b-pub{background:var(--red-soft);color:var(--red);border:1px solid #fecaca}
+.n-date{font-family:var(--mono);font-size:0.68rem;color:var(--muted);flex-shrink:0;width:68px;padding-top:4px;letter-spacing:0.02em}
+.n-badge{font-family:var(--mono);font-size:0.62rem;font-weight:500;padding:0.2rem 0.55rem;border-radius:4px;flex-shrink:0;margin-top:2px;white-space:nowrap;letter-spacing:0.04em}
+.b-pub{background:var(--red-soft);color:var(--red);border:1px solid #ddd6fe}
 .b-award{background:var(--gold-soft);color:var(--gold);border:1px solid #fde68a}
 .b-talk{background:var(--blue-soft);color:var(--blue);border:1px solid #bfdbfe}
 .b-news{background:var(--green-soft);color:var(--green);border:1px solid #bbf7d0}
-.n-body{font-size:0.88rem;color:var(--ink2);line-height:1.6;flex:1}
+.n-body{font-size:0.9rem;color:var(--ink2);line-height:1.65;flex:1}
 .n-body strong{color:var(--ink);font-weight:600}
-.n-body em{color:var(--muted);font-style:italic}
+.n-body em{color:var(--muted);font-style:italic;font-family:var(--serif);font-size:0.95em}
 
 /* ── PUBLICATIONS ── */
-.pub-item{padding:1.4rem 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start}
+.pub-item{padding:1.5rem 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start}
 .pub-item:last-child{border-bottom:none}
-.pub-title{font-family:var(--serif);font-size:0.98rem;font-weight:300;font-style:italic;color:var(--ink);line-height:1.5;margin-bottom:0.3rem}
-.pub-meta{font-size:0.78rem;color:var(--muted)}
-.pub-meta .venue{color:var(--red);font-weight:600;font-style:normal}
+.pub-title{font-family:var(--serif);font-size:1rem;font-weight:300;font-style:italic;color:var(--ink);line-height:1.55;margin-bottom:0.4rem}
+.pub-meta{font-size:0.78rem;color:var(--muted);line-height:1.6}
+.pub-meta .venue{color:var(--red);font-weight:600;font-style:normal;font-family:var(--mono);font-size:0.72rem;letter-spacing:0.03em}
 .pub-links{display:flex;flex-direction:column;gap:0.4rem;align-items:flex-end}
 .pl{font-size:0.72rem;font-family:var(--mono);padding:0.2rem 0.65rem;border:1px solid var(--rule);border-radius:4px;color:var(--blue);background:var(--paper);white-space:nowrap;transition:all .15s}
 .pl:hover{background:var(--blue-soft);border-color:var(--blue);text-decoration:none}
 
 /* ── EXPERIENCE ── */
-.exp-item{display:flex;gap:2rem;padding:1.5rem 0;border-bottom:1px solid var(--rule)}
+.exp-item{display:flex;gap:2rem;padding:1.6rem 0;border-bottom:1px solid var(--rule)}
 .exp-item:last-child{border-bottom:none}
 .exp-meta{flex-shrink:0;width:110px;text-align:right}
-.exp-date{font-family:var(--mono);font-size:0.72rem;color:var(--muted);line-height:1.6}
+.exp-date{font-family:var(--mono);font-size:0.68rem;color:var(--muted);line-height:1.7;letter-spacing:0.02em}
 .exp-body{}
-.exp-role{font-weight:600;font-size:0.95rem;color:var(--ink);margin-bottom:0.2rem}
-.exp-org{font-size:0.85rem;color:var(--blue);margin-bottom:0.65rem}
-.exp-ul{padding-left:1.1rem;font-size:0.86rem;color:var(--ink2);line-height:1.6}
-.exp-ul li{margin-bottom:0.3rem}
+.exp-role{font-weight:600;font-size:0.97rem;color:var(--ink);margin-bottom:0.2rem;letter-spacing:-0.01em}
+.exp-org{font-size:0.85rem;color:var(--blue);margin-bottom:0.7rem;font-weight:500}
+.exp-ul{padding-left:1.1rem;font-size:0.87rem;color:var(--ink2);line-height:1.7}
+.exp-ul li{margin-bottom:0.35rem}
 
 /* ── PROJECTS ── */
 .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
 .proj-card{background:var(--paper);padding:1.5rem;transition:background .15s;position:relative}
 .proj-card:hover{background:var(--cream)}
-.proj-card.feat{background:var(--ink);color:var(--cream)}
-.proj-card.feat:hover{background:#27272a}
+.proj-card.feat{background:#2e1a4a;color:#ede9fe}
+.proj-card.feat:hover{background:#3b2060}
 .feat-label{font-family:var(--mono);font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem}
-.proj-card.feat .feat-label{color:#a1a1aa}
+.proj-card.feat .feat-label{color:#a78bfa}
 .proj-name{font-family:var(--serif);font-size:1.1rem;font-weight:500;font-style:italic;color:var(--ink);margin-bottom:0.4rem}
 .proj-card.feat .proj-name{color:var(--cream)}
 .proj-desc{font-size:0.83rem;color:var(--ink2);line-height:1.6;margin-bottom:0.8rem}
-.proj-card.feat .proj-desc{color:#d4d4d8}
+.proj-card.feat .proj-desc{color:#c4b5fd}
 .proj-chips{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.8rem}
 .chip{font-size:0.68rem;font-family:var(--mono);padding:0.15rem 0.5rem;border-radius:3px;background:var(--cream);color:var(--muted);border:1px solid var(--rule)}
-.proj-card.feat .chip{background:#3f3f46;color:#d4d4d8;border-color:#52525b}
+.proj-card.feat .chip{background:#3d2260;color:#c4b5fd;border-color:#5b3a8a}
 .proj-links{display:flex;gap:0.4rem}
 .plink{font-size:0.72rem;font-family:var(--mono);padding:0.2rem 0.65rem;border:1px solid var(--rule);border-radius:4px;color:var(--blue);background:var(--paper)}
 .plink:hover{background:var(--blue-soft);text-decoration:none}
-.proj-card.feat .plink{border-color:#52525b;color:#93c5fd;background:#3f3f46}
-.proj-card.feat .plink:hover{background:#52525b;text-decoration:none}
+.proj-card.feat .plink{border-color:#5b3a8a;color:#c4b5fd;background:#3d2260}
+.proj-card.feat .plink:hover{background:#5b3a8a;text-decoration:none}
 
 /* ── EDU ── */
 .edu-item{display:flex;gap:2rem;padding:1.2rem 0;border-bottom:1px solid var(--rule);align-items:flex-start}
@@ -186,7 +190,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop
   <div class="nav-inner">
     <span class="nav-brand">Sree Bhargavi Balija</span>
     <ul class="nav-links">
-      <li><a href="#research">Research Focus</a></li>
       <li><a href="#news">Highlights</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -216,46 +219,28 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop
     <div class="hero-right">
       <div class="hero-eyebrow">PhD Researcher · Computer Science</div>
       <h1 class="hero-name">Sree Bhargavi <em>Balija</em></h1>
-      <div class="hero-affil"><strong>University of Missouri, Columbia</strong> &nbsp;·&nbsp; MS UC San Diego &nbsp;·&nbsp; BE IIT Hyderabad</div>
+      <div class="hero-affil"><strong>University of Missouri, Columbia</strong> <span class="sep">·</span> MS UC San Diego <span class="sep">·</span> BE IIT Hyderabad</div>
       <p class="hero-bio">
-        I build and study <strong>federated learning systems</strong>, <strong>privacy-preserving ML</strong>, and <strong>agentic AI infrastructure</strong>. My research asks how intelligent systems can collaborate without centralizing data, and how LLMs can be made efficient and trustworthy at scale. I publish at AAAI, NeurIPS, and collaborate with <a href="#">MIT Media Lab</a>, <a href="#">Meta Research</a>, and <a href="#">Stanford</a>.
+        I build and study <strong>federated learning systems</strong>, <strong>privacy-preserving ML</strong>, and <strong>agentic AI infrastructure</strong> — spanning LLM efficiency &amp; quantization, differential privacy, decentralized multi-agent frameworks, neuromorphic computing, and trustworthy AI. My research asks how intelligent systems can collaborate without centralizing data, and how LLMs can be made efficient and trustworthy at scale. I publish at AAAI, NeurIPS, and collaborate with <a href="#">MIT Media Lab</a>, <a href="#">Meta Research</a>, and <a href="#">Stanford</a>.
       </p>
 
       <div class="stat-row">
         <div class="stat-cell"><span class="stat-n">75+</span><span class="stat-l">Citations</span></div>
         <div class="stat-cell"><span class="stat-n">11</span><span class="stat-l">Publications</span></div>
         <div class="stat-cell"><span class="stat-n">3</span><span class="stat-l">Fellowships</span></div>
-        <div class="stat-cell"><span class="stat-n">5+</span><span class="stat-l">Collaborations</span></div>
+        <div class="stat-cell"><span class="stat-n">5+</span><span class="stat-l">Collabs</span></div>
       </div>
     </div>
   </header>
 
-  <!-- RESEARCH FOCUS -->
-  <section class="section" id="research">
-    <div class="sh"><span class="sh-num">01</span><h2>Research Interests</h2><div class="sh-line"></div></div>
-    <div class="tag-cloud">
-      <span class="rtag">Federated Learning</span>
-      <span class="rtag">Privacy-Preserving ML</span>
-      <span class="rtag">LLM Efficiency & Quantization</span>
-      <span class="rtag">Agentic AI Systems</span>
-      <span class="rtag">Decentralized AI</span>
-      <span class="rtag">Differential Privacy</span>
-      <span class="rtag">Multi-Agent Frameworks</span>
-      <span class="rtag">Neuromorphic Computing</span>
-      <span class="rtag">Trustworthy AI</span>
-      <span class="rtag">Conformal Prediction</span>
-      <span class="rtag">Blockchain for ML</span>
-      <span class="rtag">GPU Orchestration</span>
-    </div>
-  </section>
-
   <!-- NEWS -->
   <section class="section" id="news">
-    <div class="sh"><span class="sh-num">02</span><h2>News & Honors</h2><div class="sh-line"></div></div>
+    <div class="sh"><span class="sh-num">01</span><h2>News & Honors</h2><div class="sh-line"></div></div>
 
     <div class="ticker-outer">
       <div class="ticker-track">
         <span class="t-item">🏆 MIT NANDA Radius Fellow 2025</span><span class="t-sep">·</span>
+        <span class="t-item">🎤 AAAI 2026 Oral Presentation</span><span class="t-sep">·</span>
         <span class="t-item">📄 NeurIPS 2025 WIML Workshop</span><span class="t-sep">·</span>
         <span class="t-item">🎤 AIM-2026 Oral Presentation</span><span class="t-sep">·</span>
         <span class="t-item">🧠 EleutherAI Open AI Research Fellow</span><span class="t-sep">·</span>
@@ -266,6 +251,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop
         <span class="t-item">🎓 Academic Excellence · IIT Hyderabad</span><span class="t-sep">·</span>
         <!-- dup for loop -->
         <span class="t-item">🏆 MIT NANDA Radius Fellow 2025</span><span class="t-sep">·</span>
+        <span class="t-item">🎤 AAAI 2026 Oral Presentation</span><span class="t-sep">·</span>
         <span class="t-item">📄 NeurIPS 2025 WIML Workshop</span><span class="t-sep">·</span>
         <span class="t-item">🎤 AIM-2026 Oral Presentation</span><span class="t-sep">·</span>
         <span class="t-item">🧠 EleutherAI Open AI Research Fellow</span><span class="t-sep">·</span>
@@ -277,6 +263,11 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop
       </div>
     </div>
 
+    <div class="news-row">
+      <span class="n-date">2026</span>
+      <span class="n-badge b-talk">Oral</span>
+      <span class="n-body">Oral presentation accepted at <strong>AAAI 2026</strong> — presenting latest research on federated learning and agentic AI systems.</span>
+    </div>
     <div class="news-row">
       <span class="n-date">Sep 2025</span>
       <span class="n-badge b-pub">Paper</span>
@@ -331,81 +322,30 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop
 
   <!-- PUBLICATIONS -->
   <section class="section" id="publications">
-    <div class="sh"><span class="sh-num">03</span><h2>Publications</h2><div class="sh-line"></div></div>
-
-    <div class="pub-item">
-      <div>
-        <div class="pub-title">Hybrid SNN-Transformer Networks for Event-Based, Energy-Efficient Large-Scale Learning</div>
-        <div class="pub-meta">SB Balija &nbsp;·&nbsp; <span class="venue">NeurIPS 2025, WIML Workshop</span></div>
-      </div>
-      <div class="pub-links"><span class="pl">Poster</span></div>
-    </div>
-
-    <div class="pub-item">
-      <div>
-        <div class="pub-title">EcoFlow: An AI-Optimized GPU Orchestrator for Exascale Sustainability</div>
-        <div class="pub-meta">SB Balija &nbsp;·&nbsp; <span class="venue">AIM-2026, Oral</span></div>
-      </div>
-      <div class="pub-links"><span class="pl">Talk</span></div>
-    </div>
-
-    <div class="pub-item">
-      <div>
-        <div class="pub-title">An Index-based Federated Registry Architecture for Secure, Capability-Aware Agent Discovery: Leveraging NANDA and ANS</div>
-        <div class="pub-meta">SB Balija, et al. (MIT Media Lab · Meta · Stanford) &nbsp;·&nbsp; <span class="venue">Preprint 2025</span></div>
-      </div>
-      <div class="pub-links"><a class="pl" href="#">Paper</a></div>
-    </div>
-
-    <div class="pub-item">
-      <div>
-        <div class="pub-title">The Trust Fabric: Decentralized Interoperability and Economic Coordination for the Agentic Web</div>
-        <div class="pub-meta">SB Balija, et al. &nbsp;·&nbsp; <span class="venue">Preprint 2025</span></div>
-      </div>
-      <div class="pub-links"><a class="pl" href="#">Paper</a></div>
-    </div>
-
-    <div class="pub-item">
-      <div>
-        <div class="pub-title">Fortifying the Agentic Web: A Unified Zero-Trust Architecture Against Logic-layer Threats</div>
-        <div class="pub-meta">SB Balija, et al. &nbsp;·&nbsp; <span class="venue">Preprint 2025</span></div>
-      </div>
-      <div class="pub-links"><a class="pl" href="#">Paper</a></div>
-    </div>
-
-    <div class="pub-item">
-      <div>
-        <div class="pub-title">Explore-Then-Commit: The Optimal Strategy for Scientific Breakthrough Discovery</div>
-        <div class="pub-meta">SB Balija, et al. &nbsp;·&nbsp; <span class="venue">AAAI 2025</span></div>
-      </div>
-      <div class="pub-links"><span class="pl">Paper</span></div>
-    </div>
+    <div class="sh"><span class="sh-num">02</span><h2>Publications</h2><div class="sh-line"></div></div>
 
     <div class="pub-item">
       <div>
         <div class="pub-title">AILUMINATE: Introducing v1.0 of the AI Risk and Reliability Benchmark from MLCommons</div>
-        <div class="pub-meta">SB Balija, et al. &nbsp;·&nbsp; <span class="venue">MLCommons 2025</span></div>
+        <div class="pub-meta">S Ghosh, H Frase, A Williams, S Luger, P Röttger, F Barez, S McGregor, SB Balija, et al. &nbsp;·&nbsp; <span class="venue">arXiv 2025</span> &nbsp;·&nbsp; arXiv:2503.05731</div>
       </div>
-      <div class="pub-links"><a class="pl" href="#">Paper</a></div>
+      <div class="pub-links"><a class="pl" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=trZV8k0AAAAJ&citation_for_view=trZV8k0AAAAJ:9yKSN-GCB0IC" target="_blank">Paper</a></div>
     </div>
 
     <div class="pub-item">
       <div>
-        <div class="pub-title">CPTQuant — A Novel Mixed Precision Quantization Technique for Large Language Models</div>
-        <div class="pub-meta">SB Balija, et al. &nbsp;·&nbsp; <span class="venue">arXiv 2024</span></div>
+        <div class="pub-title">Explore-Then-Commit with Dynamic Expertise Amplification</div>
+        <div class="pub-meta">SB Balija, D Sahoo &nbsp;·&nbsp; <span class="venue">AAAI Symposium Series 2025</span> &nbsp;·&nbsp; Proceedings of the AAAI Symposium Series 8(1):627–635</div>
       </div>
-      <div class="pub-links">
-        <a class="pl" href="https://arxiv.org/pdf/2412.03599" target="_blank">arXiv</a>
-        <a class="pl" href="https://github.com/Sreebhargavibalijaa/Mixed_Precision_Quantization" target="_blank">Code</a>
-      </div>
+      <div class="pub-links"><a class="pl" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=trZV8k0AAAAJ&citation_for_view=trZV8k0AAAAJ:WF5omc3nYNoC" target="_blank">Paper</a></div>
     </div>
 
     <div class="pub-item">
       <div>
-        <div class="pub-title">Decoding Federated Learning: The FedNAM+ Conformal Revolution</div>
-        <div class="pub-meta">SB Balija, et al. &nbsp;·&nbsp; <span class="venue">Preprint 2024</span></div>
+        <div class="pub-title">Hybrid SNN-Transformer Networks for Event-Based, Energy-Efficient Large-Scale Learning</div>
+        <div class="pub-meta">SB Balija &nbsp;·&nbsp; <span class="venue">NeurIPS 2025 · Women in Machine Learning Workshop</span></div>
       </div>
-      <div class="pub-links"><a class="pl" href="#">Paper</a></div>
+      <div class="pub-links"><span class="pl">Poster</span></div>
     </div>
 
     <div class="pub-item">
@@ -413,14 +353,30 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop
         <div class="pub-title">Building Communication Efficient Asynchronous Peer-to-Peer Federated LLMs with Blockchain</div>
         <div class="pub-meta">SB Balija, A Nanda, D Sahoo &nbsp;·&nbsp; <span class="venue">AAAI 2024, Stanford</span> &nbsp;·&nbsp; Proceedings AAAI Symposium Series 3(1):288–292</div>
       </div>
-      <div class="pub-links"><a class="pl" href="https://ojs.aaai.org/index.php/AAAI-SS/article/view/31212" target="_blank">Paper</a></div>
+      <div class="pub-links"><a class="pl" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=trZV8k0AAAAJ&citation_for_view=trZV8k0AAAAJ:u5HHmVD_uO8C" target="_blank">Paper</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div>
+        <div class="pub-title">The Trust Fabric: Decentralized Interoperability and Economic Coordination for the Agentic Web</div>
+        <div class="pub-meta">SB Balija, R Singal, R Raskar, E Darzi, R Bala, T Hardjono, K Huang &nbsp;·&nbsp; <span class="venue">arXiv 2025</span> &nbsp;·&nbsp; arXiv:2507.07901</div>
+      </div>
+      <div class="pub-links"><a class="pl" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=trZV8k0AAAAJ&citation_for_view=trZV8k0AAAAJ:Tyk-4Ss8FVUC" target="_blank">Paper</a></div>
+    </div>
+
+    <div class="pub-item">
+      <div>
+        <div class="pub-title">Elastic MIG Reconfiguration with PCIe-Aware Placement for Multi-Tenant GPUs</div>
+        <div class="pub-meta">E Darzi, SB Balija, B Demir &nbsp;·&nbsp; <span class="venue">11th International Workshop on Serverless Computing</span> &nbsp;·&nbsp; pp. 20–25</div>
+      </div>
+      <div class="pub-links"><a class="pl" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=trZV8k0AAAAJ&citation_for_view=trZV8k0AAAAJ:YsMSGLbcyi4C" target="_blank">Paper</a></div>
     </div>
 
   </section>
 
   <!-- EXPERIENCE -->
   <section class="section" id="experience">
-    <div class="sh"><span class="sh-num">04</span><h2>Research & Industry Experience</h2><div class="sh-line"></div></div>
+    <div class="sh"><span class="sh-num">03</span><h2>Research & Industry Experience</h2><div class="sh-line"></div></div>
 
     <div class="exp-item">
       <div class="exp-meta"><div class="exp-date">Aug 2025 –<br>Current</div></div>
@@ -503,7 +459,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop
 
   <!-- PROJECTS -->
   <section class="section" id="projects">
-    <div class="sh"><span class="sh-num">05</span><h2>Selected Projects</h2><div class="sh-line"></div></div>
+    <div class="sh"><span class="sh-num">04</span><h2>Selected Projects</h2><div class="sh-line"></div></div>
     <div class="proj-grid">
 
       <div class="proj-card feat">
@@ -554,7 +510,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop
 
   <!-- EDUCATION -->
   <section class="section" id="education">
-    <div class="sh"><span class="sh-num">06</span><h2>Education</h2><div class="sh-line"></div></div>
+    <div class="sh"><span class="sh-num">05</span><h2>Education</h2><div class="sh-line"></div></div>
 
     <div class="edu-item">
       <div class="edu-yr">Jan 2026 –<br>Present</div>
@@ -586,7 +542,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(247,244,239,0.92);backdrop
 
   <!-- SKILLS -->
   <section class="section" id="skills">
-    <div class="sh"><span class="sh-num">07</span><h2>Technical Skills</h2><div class="sh-line"></div></div>
+    <div class="sh"><span class="sh-num">06</span><h2>Technical Skills</h2><div class="sh-line"></div></div>
     <div class="skills-grid">
       <div class="skill-cell"><div class="sk-head">Languages</div><div class="sk-body">Python (Expert) · Java · JavaScript · C++ · R · Fortran · Kotlin · Swift</div></div>
       <div class="skill-cell"><div class="sk-head">ML / Research</div><div class="sk-body">Federated Learning · NLP · Deep Learning · Multimodal AI · Conformal Predictions · Model Interpretability</div></div>
